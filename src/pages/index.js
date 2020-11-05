@@ -4,6 +4,8 @@ export default function Home() {
 
   const [transactions, setTransaction] = useState([])
 
+  localStorage.setItem('accountData', JSON.stringify(transactions));
+
   useEffect(() => {
     fetch('https://indie-transaction-api.netlify.app//.netlify/functions/api/api')
     .then((res) => res.json())
