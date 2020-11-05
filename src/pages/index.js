@@ -1,26 +1,17 @@
 import React, { useState, useEffect} from "react"
 
+import ApplicationContext from '../components/ApplicationContext/Application';
+
+
 export default function Home() {
 
-  const [transactions, setTransaction] = useState([])
+  const [transactions, setTransaction] = useState()
+
 
   // Save to localStorage
-  localStorage.setItem('accountData', JSON.stringify(transactions));
-
-  const dataRefresh = function () {
-  // Get the existing data
-    var existing = localStorage.getItem('accountData');
-
-// If no existing data, create an array
-// Otherwise, convert the localStorage string to an array
-    existing = existing ? existing.split() : [];
-
-// Add new data to localStorage Array
-    existing.push(transactions);
-
-// Save back to localStorage
-    localStorage.setItem('accountData', JSON.stringify(existing));
-  }
+  useEffect(() => {
+    localStorage.setItem('accountData', JSON.stringify(transactions));
+  })
 
   useEffect(() => {
     fetch('https://indie-transaction-api.netlify.app//.netlify/functions/api/api')
@@ -28,13 +19,15 @@ export default function Home() {
     .then((data) => setTransaction(data.transactions))
   }, [setTransaction])
 
-  return <div>
-
-    <button onClick={dataRefresh()} >Fetch</button>
-
-    <button>Refresh</button>
+  return <div className="App">
+    <ApplicationContext.Provider
+    value= {{
+      
+    }}>
+    <h1>Transactions</h1>
 
     <pre>{JSON.stringify(transactions, null, 2)}</pre>
-    
+
+    </ApplicationContext.Provider>
     </div>
 }
