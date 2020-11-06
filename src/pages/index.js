@@ -1,40 +1,62 @@
 import React, { useState, useEffect} from "react"
+import axios from "axios";
 
 import ApplicationContext from '../components/ApplicationContext/Application';
 
 
 export default function Home() {
 
-  const [transactions, setTransaction] = useState()
+  const [userSettings, setUserSettings] = useState({
+    refreshOnLoad: true
+  });
+  const [transactions, setTransactions] = useState(
+    JSON.parse(localStorage.getItem("transactions") || "[]")
+  );
 
+  const [isFetching, setIsFetching] = useState(false);
+
+  const fetchData = () => {
+    setIsFetching(true);
+    axios
+      .get(
+        "https://indie-transaction-api.netlify.app//.netlify/functions/api/api/"
+      )
+      .then((response) => {
+        const data = [...transactions, ...response?.data?.transactions];
+
+        localStorage.setItem("transactions", JSON.stringify(data));
+        setTransactions(data);
+        setIsFetching(false);
+      });
+  };
 
   useEffect(() => {
-
-    // Get the existing data
-    var existing = localStorage.getItem('accountData');
-
-    // If no existing data, use the value by itself
-    // Otherwise, add the new value to it
-    var data = existing ? existing + transactions : transactions;
-
-    // Save back to localStorage
-    localStorage.setItem('accountData', data );
-    
-    })
-
-
-  useEffect(() => {
-    fetch('https://indie-transaction-api.netlify.app//.netlify/functions/api/api')
-    .then((res) => res.json())
-    .then((data) => setTransaction(data.transactions))
-  }, [])
+    console.log("run once");
+    if (!isFetching) {
+      if (userSettings.refreshOnLoad) {
+        fetchData();
+      }
+    }
+  }, []);
 
   return <div className="App">
     <ApplicationContext.Provider
     value= {{ }}>
-    <h1>Transactions</h1>
-
-    <pre>{JSON.stringify(transactions, null, 2)}</pre>
+      
+     <h1>data from state</h1>
+      <button
+        onClick={() => {
+          localStorage.removeItem("transactions");
+          setTransactions([]);
+        }}
+      >
+        clear localStorage
+      </button>
+      <button disabled={isFetching} onClick={() => fetchData()}>
+        fetch new data
+      </button>
+      items in store {transactions.length}
+      <pre>{JSON.stringify(transactions, null, 2)}</pre>
 
     </ApplicationContext.Provider>
     </div>
