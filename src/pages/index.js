@@ -81,8 +81,8 @@ export default function Home() {
     </div>
 
     <div>
-<h2>Income</h2>
-{transactions
+    <h2>Income</h2>
+    {transactions
       .filter(income => income.amount > 0 )
       .map(income => (
 
@@ -90,6 +90,7 @@ export default function Home() {
         <pre>{JSON.stringify(income, null, 2)}</pre>
       </div>
       ))}
+
     </div>
       
 
