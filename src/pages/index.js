@@ -57,6 +57,11 @@ export default function Home() {
       </button>      <p>items in transaction history {transactions.length}</p>
       <pre>{JSON.stringify(transactions, null, 2)}</pre>
 
+      <h2>Expenses</h2>
+      {transactions
+      .filter(expenses => expenses.amount < 0 )
+      .map(expenses => (<pre>{JSON.stringify(expenses, null, 2)}</pre>))}
+      
     </ApplicationContext.Provider>
     </div>
 }
