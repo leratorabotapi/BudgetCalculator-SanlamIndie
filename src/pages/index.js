@@ -42,7 +42,7 @@ export default function Home() {
   return <div className="App">
     <ApplicationContext.Provider
     value= {{ }}>
-      
+
      <h1>data from state</h1>
       <button
         onClick={() => {
@@ -54,8 +54,7 @@ export default function Home() {
       </button>
       <button disabled={isFetching} onClick={() => fetchData()}>
         fetch new data
-      </button>
-      items in store {transactions.length}
+      </button>      <p>items in transaction history {transactions.length}</p>
       <pre>{JSON.stringify(transactions, null, 2)}</pre>
 
     </ApplicationContext.Provider>
