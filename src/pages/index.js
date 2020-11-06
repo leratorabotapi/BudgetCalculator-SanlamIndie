@@ -61,6 +61,11 @@ export default function Home() {
       {transactions
       .filter(expenses => expenses.amount < 0 )
       .map(expenses => (<pre>{JSON.stringify(expenses, null, 2)}</pre>))}
+
+      <h2>Income</h2>
+      {transactions
+      .filter(income => income.amount > 0 )
+      .map(income => (<pre>{JSON.stringify(income, null, 2)}</pre>))}
       
     </ApplicationContext.Provider>
     </div>
