@@ -68,6 +68,7 @@ export default function Home() {
         clear localStorage
       </button>
 
+
       <button disabled={isFetching} onClick={() => fetchData()}>
         fetch new data
       </button>
