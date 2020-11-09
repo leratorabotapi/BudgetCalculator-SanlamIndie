@@ -18,6 +18,8 @@ export default function Home() {
 
   const [isFetching, setIsFetching] = useState(false);
 
+  const [balance, setBalance] = useState('')
+
   const fetchData = () => {
     setIsFetching(true);
     axios
@@ -52,6 +54,17 @@ export default function Home() {
   var timeComponent = date.utc().format('LTS');
   console.log(dateComponent);
   console.log(timeComponent);
+
+  // calculates the total balance -> all negative amounts(expenses) + all positive amounts(income)
+  const getBalance = () => {
+    const amounts = transactions.map(income => income.amount)
+    const money = amounts.reduce((acc, item) => (acc += item), 0).toFixed(2)
+    setBalance(money) 
+  }
+  //getBalance is run everytime transactions is updated
+  useEffect(() => {
+    getBalance() 
+  }, [transactions])
 
   return <div className="App">
     <ApplicationContext.Provider
@@ -102,6 +115,8 @@ export default function Home() {
         <pre>{JSON.stringify(income, null, 2)}</pre>
       </div>
       ))}
+
+      <h3>Total Balance: R{balance}</h3>
 
     </div>
       
