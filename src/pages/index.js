@@ -1,6 +1,8 @@
 import React, { useState, useEffect} from "react"
 import axios from "axios";
 import './style.css'
+// used to parse date
+import moment from 'moment';
 
 import ApplicationContext from '../components/ApplicationContext/Application';
 
@@ -41,6 +43,15 @@ export default function Home() {
       }
     }
   }, []);
+
+  // parse Date
+  // Uses momentJS plugin
+  var str = '2011-04-11T10:20:30Z';
+  var date = moment(str);
+  var dateComponent = date.utc().format('LL');
+  var timeComponent = date.utc().format('LTS');
+  console.log(dateComponent);
+  console.log(timeComponent);
 
   return <div className="App">
     <ApplicationContext.Provider
