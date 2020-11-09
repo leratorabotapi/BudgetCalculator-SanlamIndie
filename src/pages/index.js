@@ -1,6 +1,7 @@
 import React, { useState, useEffect} from "react"
 import axios from "axios";
 import './style.css'
+import Copy from '../components/Copy'
 // used to parse date
 import moment from 'moment';
 
@@ -116,8 +117,8 @@ export default function Home() {
       </div>
       ))}
 
-      <h3>Total Balance: R{balance}</h3>
-
+      <Copy fontSize="20">Total Balance: R{balance}</Copy>
+      
     </div>
       
 
