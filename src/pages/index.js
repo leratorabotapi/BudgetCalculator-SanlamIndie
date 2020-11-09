@@ -115,7 +115,7 @@ export default function Home() {
       </div>
       ))}
 
-      <h3>Total Balance: ${balance}</h3>
+      <h3>Total Balance: R{balance}</h3>
 
     </div>
       
