@@ -2,6 +2,7 @@ import React, { useState, useEffect} from "react"
 import axios from "axios";
 import './style.css'
 import Copy from '../components/Copy'
+import Balance from '../components/Balance'
 // used to parse date
 import moment from 'moment';
 
@@ -93,7 +94,7 @@ export default function Home() {
     </div>
 
     <div>
-      <Copy fontType="H2" >Expenses</Copy>
+      <Copy fontType="H1" >Expenses</Copy>
 
       {transactions
       .filter(expenses => expenses.amount < 0 )
@@ -109,7 +110,7 @@ export default function Home() {
     </div>
 
     <div>
-    <h2>Income</h2>
+    <Copy fontType="H1">Income</Copy>
     {transactions
       .filter(income => income.amount > 0 )
       .map(income => (
@@ -119,7 +120,7 @@ export default function Home() {
       </div>
       ))}
 
-      <Copy fontSize="20">Total Balance: R{balance}</Copy>
+      <Balance amount={balance} />
       
     </div>
       

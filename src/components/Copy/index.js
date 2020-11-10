@@ -67,7 +67,7 @@ const Copy = ({ children, fontType, color }) => {
       className={`copy-${fontType}`}
       style={{
         color: `${copyColor}`,
-        fontSize: `${fontType}px`
+        fontSize: `${fontStyle}px`
       }}
     >
       {children}
