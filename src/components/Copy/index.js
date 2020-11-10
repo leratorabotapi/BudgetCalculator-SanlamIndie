@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import './styles.css'
 
-const Copy = ({ children, style, color }) => {
+const Copy = ({ children, fontType, color }) => {
   let copyColor
   switch (color) {
     case 'black':
@@ -29,7 +29,7 @@ const Copy = ({ children, style, color }) => {
   }
 
   let fontStyle
-  switch (style) {
+  switch (fontType) {
     case 'Hero':
       fontStyle = '52'
       break
@@ -64,10 +64,10 @@ const Copy = ({ children, style, color }) => {
 
   return (
     <div
-      className={`Copy-${style}`}
+      className={`copy-${fontType}`}
       style={{
         color: `${copyColor}`,
-        fontSize: `${style}px`
+        fontSize: `${fontType}px`
       }}
     >
       {children}

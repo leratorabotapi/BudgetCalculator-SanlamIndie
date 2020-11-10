@@ -93,15 +93,17 @@ export default function Home() {
     </div>
 
     <div>
-      <h2>Expenses</h2>
+      <Copy fontType="H2" >Expenses</Copy>
 
       {transactions
       .filter(expenses => expenses.amount < 0 )
       .map(expenses => (
-
+      
+      <Copy>
       <div>
         <pre>{JSON.stringify(expenses, null, 2)}</pre>
       </div>
+      </Copy>
 
       ))}
     </div>
@@ -113,7 +115,7 @@ export default function Home() {
       .map(income => (
 
       <div>
-        <pre>{JSON.stringify(income, null, 2)}</pre>
+       <Copy> <pre>{JSON.stringify(income, null, 2)}</pre></Copy>
       </div>
       ))}
 
