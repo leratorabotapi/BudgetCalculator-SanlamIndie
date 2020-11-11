@@ -3,6 +3,7 @@ import axios from "axios";
 import './style.css'
 import Copy from '../components/Copy'
 import Balance from '../components/Balance'
+import NavBar from '../components/Navbar'
 // used to parse date
 import moment from 'moment';
 
@@ -70,9 +71,10 @@ export default function Home() {
 
   return <div className="App">
     <ApplicationContext.Provider
-    value= {{ }}>
+    value= {{ }}>   
     
     <div>
+    <NavBar />
      <h1>data from state</h1>
       <button
         onClick={() => {
