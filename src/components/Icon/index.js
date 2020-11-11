@@ -4,6 +4,9 @@ import PropTypes from 'prop-types'
 const Icon = ({ name, size }) => {
   let content
   switch (name) {
+    case 'home':
+      content = '🏚'
+      break
     case 'report':
       content = '📊'
       break

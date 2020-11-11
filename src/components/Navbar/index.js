@@ -7,6 +7,10 @@ import Copy from "../Copy"
 const Navbar = () => {
   return (
     <div className="navbar">
+      <Link to="/">
+        <Icon name="home"></Icon>
+        <Copy>Home</Copy>
+      </Link>
       <Link to="/reports">
         <Icon name="report"></Icon>
         <Copy>Reports</Copy>
