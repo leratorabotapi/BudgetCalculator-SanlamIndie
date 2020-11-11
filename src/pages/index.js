@@ -5,6 +5,7 @@ import Copy from '../components/Copy'
 import Balance from '../components/Balance'
 import NavBar from '../components/Navbar'
 import 'antd/dist/antd.css';
+import { Button } from '../components/Button/button'
 
 import { Table } from 'antd';
 
@@ -110,8 +111,6 @@ export default function Home() {
     getBalance() 
   }, [transactions])
 
-  // Append data
-
   const columns = [
     {
       title: 'Description',
@@ -142,6 +141,7 @@ export default function Home() {
     
     <div>
     <NavBar />
+    <Button primary="false" label="hello"></Button>
       <button
         onClick={() => {
           localStorage.removeItem("transactions");
