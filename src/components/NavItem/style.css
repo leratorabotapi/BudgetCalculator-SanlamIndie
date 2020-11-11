@@ -1,0 +1,10 @@
+.navItem {
+    display: flex;
+    background: #E0E0E0;
+  }
+  
+.navItem button {
+    border: none;
+    background: #E0E0E0;
+
+  }

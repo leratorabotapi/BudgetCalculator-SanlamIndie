@@ -24,6 +24,30 @@ export default function Home() {
 
   const [balance, setBalance] = useState('')
 
+  const [pages, setPages] = useState([
+    {
+      name: 'Reports',
+      icon: 'report'
+    },
+    {
+      name: 'Transactions',
+      icon: 'transaction'
+    },
+    {
+      name: 'Budget',
+      icon: 'budget'
+    },
+    {
+      name: 'Accounts',
+      icon: 'account'
+    },
+  
+  
+  ])
+  
+  const [activePage, setActivePage] = useState()
+     
+
   const fetchData = () => {
     setIsFetching(true);
     axios
@@ -44,7 +68,10 @@ export default function Home() {
 
         localStorage.setItem("transactions", jsonData);
 
+        console.log(data)
+
         setTransactions(data);
+        setActivePage()
         setIsFetching(false);
       });
   };
@@ -86,7 +113,7 @@ export default function Home() {
 
   return <div className="App">
     <ApplicationContext.Provider
-    value= {{ }}>   
+    value= {{ pages, setPages }}>   
     
     <div>
     <NavBar />
