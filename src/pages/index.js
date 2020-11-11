@@ -15,6 +15,7 @@ export default function Home() {
   const [userSettings, setUserSettings] = useState({
     refreshOnLoad: true
   });
+
   const [transactions, setTransactions] = useState(
     JSON.parse(localStorage.getItem("transactions") || "[]")
   );
@@ -32,7 +33,17 @@ export default function Home() {
       .then((response) => {
         const data = [...transactions, ...response?.data?.transactions];
 
-        localStorage.setItem("transactions", JSON.stringify(data));
+        // Append data, add catergory
+              
+        let transformedData = [];
+        data.forEach(transaction => {
+          transformedData.push({ ...transaction, category: 'uncatergorised'});
+        });
+
+        const jsonData = JSON.stringify(transformedData);
+
+        localStorage.setItem("transactions", jsonData);
+
         setTransactions(data);
         setIsFetching(false);
       });
@@ -64,10 +75,14 @@ export default function Home() {
     const money = amounts.reduce((acc, item) => (acc += item), 0).toFixed(2)
     setBalance(money) 
   }
+  
   //getBalance is run everytime transactions is updated
   useEffect(() => {
     getBalance() 
   }, [transactions])
+
+  // Append data
+
 
   return <div className="App">
     <ApplicationContext.Provider
@@ -96,7 +111,7 @@ export default function Home() {
     </div>
 
     <div>
-      <Copy fontType="H1" >Expenses</Copy>
+      <Copy fontType="H1">Expenses</Copy>
 
       {transactions
       .filter(expenses => expenses.amount < 0 )
