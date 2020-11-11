@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import ApplicationContext from '../ApplicationContext/Application'
+import ApplicationContext from '../components/ApplicationContext/Application'
 import Copy from '../components/Copy'
 import Navbar from '../components/Navbar'
 

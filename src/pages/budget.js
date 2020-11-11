@@ -1,12 +1,11 @@
 import React from 'react'
 import Copy from '../components/Copy'
-import Navbar from '../components/Navbar';
 
+import Layout from '../components/Layout'
 export default function Budget() {
     return (
-        <div className="budget">
-            <Navbar />
+        <Layout name="budget">
             <Copy fontType="H1">Budget</Copy>
-        </div>
+        </Layout>
     )
 }

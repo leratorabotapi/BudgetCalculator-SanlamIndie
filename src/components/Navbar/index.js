@@ -21,8 +21,7 @@ const Navbar = () => {
       </Link>
       <Link to="/budget">
         <Icon name="budget"></Icon>
-        <Copy>Budget</Copy>
-        
+        <Copy>Budget</Copy> 
       </Link>
       <Link to="/dashboard">
         <Icon name="dashboard"></Icon>

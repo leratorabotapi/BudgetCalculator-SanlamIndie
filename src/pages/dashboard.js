@@ -1,12 +1,11 @@
 import React from 'react'
 import Copy from '../components/Copy'
-import Navbar from '../components/Navbar';
 
-export default function Dashboard() {
+import Layout from '../components/Layout'
+export default function Dashboard(dashboard) {
     return (
-        <div className="dashboard">
-            <Navbar />
+        <Layout name={dashboard}>
             <Copy fontType="H1">Dashboard</Copy>
-        </div>
+        </Layout>
     )
 }
