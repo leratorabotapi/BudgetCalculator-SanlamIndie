@@ -4,6 +4,10 @@ import './style.css'
 import Copy from '../components/Copy'
 import Balance from '../components/Balance'
 import NavBar from '../components/Navbar'
+import 'antd/dist/antd.css';
+
+import { Table } from 'antd';
+
 // used to parse date
 import moment from 'moment';
 
@@ -64,9 +68,7 @@ export default function Home() {
           transformedData.push({ ...transaction, category: 'uncatergorised'});
         });
 
-        const jsonData = JSON.stringify(transformedData);
-
-        localStorage.setItem("transactions", jsonData);
+        localStorage.setItem("transactions", JSON.stringify(transformedData));
 
         console.log(data)
 
@@ -110,14 +112,36 @@ export default function Home() {
 
   // Append data
 
+  const columns = [
+    {
+      title: 'Description',
+      dataIndex: 'description',
+      key: 'description',
+    },
+    {
+      title: 'Category',
+      dataIndex: 'category',
+      key: 'category',
+    },
+    {
+      title: 'Date',
+      dataIndex: 'date',
+      key: 'date',
+    },
+    {
+      title: 'Amount',
+      dataIndex: 'amount',
+      key: 'amount',
+    },
+  ];
 
-  return <div className="App">
+
+  return <div className="">
     <ApplicationContext.Provider
     value= {{ pages, setPages }}>   
     
     <div>
     <NavBar />
-     <h1>data from state</h1>
       <button
         onClick={() => {
           localStorage.removeItem("transactions");
@@ -132,9 +156,23 @@ export default function Home() {
         fetch new data
       </button>
 
+      <br/>
+
+      <Copy fontType="H1">Account Balance</Copy>
+
+      <Balance amount={balance} />
+
+      <Table pagination={{
+        total: transactions.length,
+        pageSize: transactions.length,
+        hideOnSinglePage: true
+    }} 
+    columns={columns} dataSource={transactions} />
+
+      {/*
       <p>items in transaction history {transactions.length}</p>
 
-      <pre>{JSON.stringify(transactions, null, 2)}</pre>
+      <pre>{JSON.stringify(transactions, null, 2)}</pre> */}
     </div>
 
     <div>
@@ -163,8 +201,6 @@ export default function Home() {
        <Copy> <pre>{JSON.stringify(income, null, 2)}</pre></Copy>
       </div>
       ))}
-
-      <Balance amount={balance} />
       
     </div>
       
