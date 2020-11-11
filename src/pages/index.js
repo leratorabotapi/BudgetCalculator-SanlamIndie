@@ -162,6 +162,7 @@ export default function Home() {
 
       <Balance amount={balance} />
 
+ {/*
       <Table pagination={{
         total: transactions.length,
         pageSize: transactions.length,
