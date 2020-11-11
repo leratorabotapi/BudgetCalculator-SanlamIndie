@@ -136,7 +136,7 @@ export default function Home() {
   ];
 
 
-  return <div className="">
+  return <div className="App">
     <ApplicationContext.Provider
     value= {{ pages, setPages }}>   
     
