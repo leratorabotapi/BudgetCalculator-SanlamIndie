@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Copy from '../Copy'
 
-const Balance = ({ amount, size, currency, color }) => {
+const Balance = ({ amount, size, add, currency, color }) => {
 
   let balanceColor
   switch (color) {
