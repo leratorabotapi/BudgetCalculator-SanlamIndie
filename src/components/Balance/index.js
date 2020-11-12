@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Copy from '../Copy'
 
-const Balance = ({ amount, size, add, currency, color }) => {
+const Balance = ({ amount, size, currency, color }) => {
 
   let balanceColor
   switch (color) {
@@ -32,7 +32,7 @@ const Balance = ({ amount, size, add, currency, color }) => {
         color: `${balanceColor}`
       }}
     >
-      <Copy fontType="H2">{formattedAmount}</Copy> 
+      <Copy fontType="Body1">{formattedAmount}</Copy> 
     </div>
   )
 }

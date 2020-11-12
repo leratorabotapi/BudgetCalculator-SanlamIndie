@@ -8,13 +8,9 @@ const Navbar = () => {
   return (
     <div className="navbar">
       <Link to="/">
-        <Icon name="home"></Icon>
-        <Copy>Home</Copy>
-      </Link>
-      <Link to="/reports">
-        <Icon name="report"></Icon>
-        <Copy>Reports</Copy>
-      </Link>
+        <Icon size="large" name="home"></Icon>
+        <Copy>Dashboard</Copy>
+      </Link>   
       <Link to="/transactions">
         <Icon name="transaction"></Icon>
         <Copy>Transactions</Copy>
@@ -23,9 +19,9 @@ const Navbar = () => {
         <Icon name="budget"></Icon>
         <Copy>Budget</Copy> 
       </Link>
-      <Link to="/dashboard">
-        <Icon name="dashboard"></Icon>
-        <Copy>Dashboard</Copy>
+      <Link to="/reports">
+        <Icon name="report"></Icon>
+        <Copy>Reports</Copy>
       </Link>
     </div>
   )

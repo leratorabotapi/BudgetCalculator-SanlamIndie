@@ -1,20 +1,27 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import {
+  InsertChart,
+  Paste,
+  Person,
+  PersonOutline,
+  Receipt,
+} from '../icons';
 
 const Icon = ({ name, size }) => {
   let content
   switch (name) {
     case 'home':
-      content = '🏚'
+      content = <Person />
       break
     case 'report':
-      content = '📊'
+      content = <InsertChart />
       break
     case 'transaction':
-      content = '📑'
+      content = <Paste />
       break
     case 'budget':
-      content = '📄'
+      content = <Receipt />
       break
     case 'account':
       content = '🧾'

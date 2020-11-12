@@ -4,13 +4,9 @@ import './style.css'
 import Copy from '../components/Copy'
 import Balance from '../components/Balance'
 import NavBar from '../components/Navbar'
+import Topbar from '../components/Topbar'
 import 'antd/dist/antd.css';
 import { Button } from '../components/Button/button'
-
-import { Table } from 'antd';
-
-// used to parse date
-import moment from 'moment';
 
 import ApplicationContext from '../components/ApplicationContext/Application';
 
@@ -70,12 +66,10 @@ export default function Home() {
               
         let transformedData = [];
         data.forEach(transaction => {
-          transformedData.push({ ...transaction, category: 'uncatergorised'});
+          transformedData.push({ ...transaction, category: 'Uncatergorised'});
         });
 
         localStorage.setItem("transactions", JSON.stringify(transformedData));
-
-        console.log(data)
 
         setTransactions(data);
         setActivePage()
@@ -94,15 +88,7 @@ export default function Home() {
     }
   }, []);
 
-  // parse Date
-  // Uses momentJS plugin
-  var str = '2011-04-11T10:20:30Z';
-  var date = moment(str);
-  var dateComponent = date.utc().format('LL');
-  var timeComponent = date.utc().format('LTS');
-  console.log(dateComponent);
-  console.log(timeComponent);
-
+  
   // calculates the total balance -> all negative amounts(expenses) + all positive amounts(income)
   const getBalance = () => {
     const amounts = transactions.map(income => income.amount)
@@ -141,11 +127,12 @@ export default function Home() {
 
   return <div className="App">
     <ApplicationContext.Provider
-    value= {{ pages, setPages }}>   
+    value= {{ pages, setPages, transactions }}>   
     
     <div>
+    <Topbar />
     <NavBar />
-    <Button primary="false" label="hello"></Button>
+    <Button></Button>
       <button
         onClick={() => {
           localStorage.removeItem("transactions");
@@ -167,16 +154,6 @@ export default function Home() {
       <Balance amount={balance} />
 
  {/*
-      <Table pagination={{
-        total: transactions.length,
-        pageSize: transactions.length,
-        hideOnSinglePage: true
-    }} 
-    columns={columns} dataSource={transactions} />
-
-      {/*
-      <p>items in transaction history {transactions.length}</p>
-
       <pre>{JSON.stringify(transactions, null, 2)}</pre> */}
     </div>
 

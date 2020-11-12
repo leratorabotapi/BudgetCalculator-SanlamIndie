@@ -1,5 +1,6 @@
 import React from 'react'
 import Navbar from '../Navbar'
+import Topbar from '../Topbar'
 import ApplicationContext from '../ApplicationContext/Application';
 
 const Layout = ({children, name}) => {
@@ -7,8 +8,8 @@ const Layout = ({children, name}) => {
         <div className={name}>
             <ApplicationContext.Provider>
             <Navbar />
-            {children} 
-
+            <Topbar />
+            {children}          
             </ApplicationContext.Provider>
         </div>
     )
