@@ -12,6 +12,7 @@ import { Table, Space } from 'antd'
 import 'antd/dist/antd.css'
 
 import ApplicationContext from '../components/ApplicationContext/Application';
+import Modal from "../components/Modal";
 
 
 export default function Home() {
@@ -54,6 +55,11 @@ export default function Home() {
   ])
   
   const [activePage, setActivePage] = useState()
+
+  // Modal State
+  const [showModal, setShowModal] = useState(false)
+  const openModal = () => setShowModal(true)
+  const closeModal = () => setShowModal(false)
      
 
   const fetchData = () => {
@@ -147,19 +153,23 @@ export default function Home() {
         label="clear localStorage"
         primary={true}
       />
-      <button
-         onClick={() => {
+
+      {/* Modal button */}
+      {!showModal && ( <Button primary={false} label="Open Modal" onClick={openModal} /> )}
+      <Modal closeModal={closeModal} showModal={showModal} title="Modal Example">
+        <Balance amount={balance} />
+      </Modal>
+
+      <Button
+          primary={true}
+          label="clear localStorage"
+          onClick={() => {
           localStorage.removeItem("transactions");
           setTransactions([]);
         }}
-      >
-        clear localStorage
-      </button>
-
-
-      <button disabled={isFetching} onClick={() => fetchData()}>
-        fetch new data
-      </button>
+      />
+ 
+      <Button disabled={isFetching} onClick={() => fetchData()} primary={true} label="fetch new data" />
 
       <br/>
 {/*
