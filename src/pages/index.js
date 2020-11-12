@@ -5,7 +5,7 @@ import Copy from '../components/Copy'
 import Balance from '../components/Balance'
 import NavBar from '../components/Navbar'
 import 'antd/dist/antd.css';
-import { Button } from '../components/Button/button'
+import { Button } from '../components/Button/Button'
 
 import { Table } from 'antd';
 
@@ -145,7 +145,12 @@ export default function Home() {
     
     <div>
     <NavBar />
-    <Button primary="false" label="hello"></Button>
+    <Button
+        backgroundColor="#0075C9"
+        label="Hello"
+        onClick={() => {}}
+        primary={true}
+      />
       <button
         onClick={() => {
           localStorage.removeItem("transactions");
