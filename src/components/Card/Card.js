@@ -3,7 +3,7 @@ import './style.css'
 import Copy from "../Copy/index"
 
 function Card(props) {
-    const {variant = "'primary', 'big', 'small'", children, ...rest} = props
+    const {variant = "primary", children, ...rest} = props
     return (
         <div className={`card ${variant}`}{...rest}>
             <Copy fontType='Body1'>Cash Flow</Copy> 

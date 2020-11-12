@@ -32,7 +32,7 @@ const Balance = ({ amount, size, add, currency, color }) => {
         color: `${balanceColor}`
       }}
     >
-      <Copy fontType="H2">{formattedAmount}</Copy> 
+      <Copy fontType="Body1">{formattedAmount}</Copy> 
     </div>
   )
 }

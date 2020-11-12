@@ -1,53 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
 .copy-Hero {
     font-size: 52px;
     line-height: 40px;
     letter-spacing: -0.8px;
+    font-family: 'Roboto', sans-serif;
 }
 
 .copy-H1 {
     font-size: 40px;
     line-height: 48px;
     letter-spacing: -01px;
+    font-family: 'Roboto', sans-serif;
 }
 
 .copy-H2 {
     font-size: 28px;
     line-height: 32px;
     letter-spacing: -0.8px;
+    font-family: 'Roboto', sans-serif;
 }
 
 .copy-H3 {
     font-size: 24px;
     line-height: 26px;
     letter-spacing: -0.6px;
+    font-family: 'Roboto', sans-serif;
 }
 
 .copy-H4 {
     font-size: 20px;
     line-height: 24px;
     letter-spacing: -0.4px;
+    font-family: 'Roboto', sans-serif;
 }
 
 .copy-Body1 {
     font-size: 16px;
     line-height: 20px;
     letter-spacing: -0.2px;
+    font-family: 'Roboto', sans-serif;
 }
 
 .copy-Body2 {
     font-size: 14px;
     line-height: 20px;
     letter-spacing: -0.2px;
+    font-family: 'Roboto', sans-serif;
 }
 
 .copy-Body3 {
     font-size: 12px;
     line-height: 20px;
     letter-spacing: -0.2px;
+    font-family: 'Roboto', sans-serif;
 }
 
 .copy-Body4 {
     font-size: 9px;
     line-height: 20px;
     letter-spacing: -0.2px;
+    font-family: 'Roboto', sans-serif;
 }

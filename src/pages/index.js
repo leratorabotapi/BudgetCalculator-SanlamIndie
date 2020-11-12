@@ -4,12 +4,9 @@ import './style.css'
 import Copy from '../components/Copy'
 import Balance from '../components/Balance'
 import NavBar from '../components/Navbar'
+import Topbar from '../components/Topbar'
 import 'antd/dist/antd.css';
-
-import { Table } from 'antd';
-
-// used to parse date
-import moment from 'moment';
+import { Button } from '../components/Button/Button'
 
 import ApplicationContext from '../components/ApplicationContext/Application';
 
@@ -20,13 +17,41 @@ export default function Home() {
     refreshOnLoad: true
   });
 
-  const [transactions, setTransactions] = useState(
-    JSON.parse(localStorage.getItem("transactions") || "[]")
+  const [transactions, setTransactions] = useState(() => {
+    if (typeof window !== 'undefined') {
+      JSON.parse(localStorage.getItem("transactions") || "[]")
+    }
+    return []
+  }
   );
 
   const [isFetching, setIsFetching] = useState(false);
 
   const [balance, setBalance] = useState('')
+
+  const [pages, setPages] = useState([
+    {
+      name: 'Reports',
+      icon: 'report'
+    },
+    {
+      name: 'Transactions',
+      icon: 'transaction'
+    },
+    {
+      name: 'Budget',
+      icon: 'budget'
+    },
+    {
+      name: 'Accounts',
+      icon: 'account'
+    },
+  
+  
+  ])
+  
+  const [activePage, setActivePage] = useState()
+     
 
   const fetchData = () => {
     setIsFetching(true);
@@ -41,12 +66,13 @@ export default function Home() {
               
         let transformedData = [];
         data.forEach(transaction => {
-          transformedData.push({ ...transaction, category: 'uncatergorised'});
+          transformedData.push({ ...transaction, category: 'Uncatergorised'});
         });
 
         localStorage.setItem("transactions", JSON.stringify(transformedData));
 
         setTransactions(data);
+        setActivePage()
         setIsFetching(false);
       });
   };
@@ -62,15 +88,7 @@ export default function Home() {
     }
   }, []);
 
-  // parse Date
-  // Uses momentJS plugin
-  var str = '2011-04-11T10:20:30Z';
-  var date = moment(str);
-  var dateComponent = date.utc().format('LL');
-  var timeComponent = date.utc().format('LTS');
-  console.log(dateComponent);
-  console.log(timeComponent);
-
+  
   // calculates the total balance -> all negative amounts(expenses) + all positive amounts(income)
   const getBalance = () => {
     const amounts = transactions.map(income => income.amount)
@@ -82,8 +100,6 @@ export default function Home() {
   useEffect(() => {
     getBalance() 
   }, [transactions])
-
-  // Append data
 
   const columns = [
     {
@@ -109,14 +125,24 @@ export default function Home() {
   ];
 
 
-  return <div className="">
+  return <div>
     <ApplicationContext.Provider
-    value= {{ }}>   
+    value= {{ pages, setPages, transactions }}>   
     
-    <div>
+   
+    <Topbar />
     <NavBar />
+    <div className="App">
+    <div>
+    <Button
+   
+        backgroundColor="#0075C9"
+        label="clear localStorage"
+        onClick={() => {}}
+        primary={true}
+      />
       <button
-        onClick={() => {
+         onClick={() => {
           localStorage.removeItem("transactions");
           setTransactions([]);
         }}
@@ -135,16 +161,7 @@ export default function Home() {
 
       <Balance amount={balance} />
 
-      <Table pagination={{
-        total: transactions.length,
-        pageSize: transactions.length,
-        hideOnSinglePage: true
-    }} 
-    columns={columns} dataSource={transactions} />
-
-      {/*
-      <p>items in transaction history {transactions.length}</p>
-
+ {/*
       <pre>{JSON.stringify(transactions, null, 2)}</pre> */}
     </div>
 
@@ -177,7 +194,7 @@ export default function Home() {
       
     </div>
       
-
+    </div>
     </ApplicationContext.Provider>
     </div>
 }
