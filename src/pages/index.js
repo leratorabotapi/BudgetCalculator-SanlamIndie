@@ -132,16 +132,12 @@ export default function Home() {
     <div>
     <Topbar />
     <NavBar />
-<<<<<<< HEAD
-    <Button></Button>
-=======
     <Button
         backgroundColor="#0075C9"
         label="Hello"
         onClick={() => {}}
         primary={true}
       />
->>>>>>> dcb361ebdccc413c61766a1e3ad2ec8273a80040
       <button
         onClick={() => {
           localStorage.removeItem("transactions");
