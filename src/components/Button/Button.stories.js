@@ -1,4 +1,4 @@
-/*import React from 'react';
+import React from 'react';
 
 import { Button } from './Button';
 
@@ -33,4 +33,4 @@ export const Small = Template.bind({});
 Small.args = {
   size: 'small',
   label: 'Button',
-};*/
+};
