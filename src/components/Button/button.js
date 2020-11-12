@@ -15,6 +15,7 @@ export const Button = ({ primary, backgroundColor, size, label, ...props }) => {
       style={backgroundColor && { backgroundColor }}
       {...props}
     >
+      <Copy color="white">{label}</Copy>
     </button>
   )
 }
