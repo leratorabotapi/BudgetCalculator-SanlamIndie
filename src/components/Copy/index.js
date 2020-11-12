@@ -8,6 +8,9 @@ const Copy = ({ children, fontType, color }) => {
     case 'black':
       copyColor = '#000000'
       break
+    case 'white':
+      copyColor = '#ffffff'
+      break
     case 'blue':
       copyColor = '#0075C9'
       break

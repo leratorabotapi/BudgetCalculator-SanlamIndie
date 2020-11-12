@@ -5,8 +5,10 @@ import './style.css'
 import Layout from '../components/Layout'
 export default function Budget() {
     return (
-        <Layout classname="App" name="budget">
+        <Layout name="budget">
+            <div className="App">
             <Copy fontType="H1">Budget</Copy>
+            </div>
         </Layout>
     )
 }

@@ -125,21 +125,24 @@ export default function Home() {
   ];
 
 
-  return <div className="App">
+  return <div>
     <ApplicationContext.Provider
     value= {{ pages, setPages, transactions }}>   
     
-    <div>
+   
     <Topbar />
     <NavBar />
+    <div className="App">
+    <div>
     <Button
+   
         backgroundColor="#0075C9"
-        label="Hello"
+        label="clear localStorage"
         onClick={() => {}}
         primary={true}
       />
       <button
-        onClick={() => {
+         onClick={() => {
           localStorage.removeItem("transactions");
           setTransactions([]);
         }}
@@ -191,7 +194,7 @@ export default function Home() {
       
     </div>
       
-
+    </div>
     </ApplicationContext.Provider>
     </div>
 }

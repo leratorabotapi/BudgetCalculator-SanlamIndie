@@ -1,13 +1,15 @@
 import React from 'react'
 import './style.css'
 import Copy from '../components/Copy'
-import Navbar from '../components/Navbar';
+import Layout from '../components/Layout'
+import './style.css'
 
 export default function Reports() {
     return (
-        <div>
-            <Navbar />
+        <Layout name="budget">
+            <div className="App">
             <Copy fontType="H1">Reports</Copy>
-        </div>
+            </div>
+        </Layout>
     )
 }

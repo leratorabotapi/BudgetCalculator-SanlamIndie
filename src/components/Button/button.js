@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import './button.css'
+import Copy from '../Copy'
 
 /**
  * Primary UI component for user interaction
@@ -14,7 +15,7 @@ export const Button = ({ primary, backgroundColor, size, label, ...props }) => {
       style={backgroundColor && { backgroundColor }}
       {...props}
     >
-      {label}
+      <Copy color="white">{label}</Copy>
     </button>
   )
 }
