@@ -148,11 +148,11 @@ export default function Home() {
     <NavBar />
     <div className="App dashbordParent">
     <div className="dashboardDiv1">
-    <Button
+    {/* <Button
         backgroundColor="#0075C9"
         label="clear localStorage"
         primary={true}
-      />
+      /> */}
 
       {/* Modal button */}
       {!showModal && ( <Button primary={false} label="Open Modal" onClick={openModal} /> )}
