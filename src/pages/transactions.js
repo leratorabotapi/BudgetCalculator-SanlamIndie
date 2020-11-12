@@ -10,15 +10,13 @@ import 'antd/dist/antd.css'
 export default function Transactions (transactionspage) {
   const transactions = JSON.parse(localStorage.getItem('transactions'))
 
-  console.log(transactions)
-
   const columns = [
     {
       title: 'Description',
       dataIndex: 'description',
       key: 'description',
-      render: (text) => 
-      <Copy>{text}</Copy>,
+      render: (text) =>
+      <Copy fontType="Body2">{text}</Copy>
     },
     {
       title: 'Category',
@@ -26,7 +24,7 @@ export default function Transactions (transactionspage) {
       key: 'category',
       render: (text) => (
         <Space size="middle">
-          <Copy>{text}</Copy>
+          <Copy fontType="Body2">{text}</Copy>
           <a>Edit</a>
         </Space>
       )
@@ -35,15 +33,15 @@ export default function Transactions (transactionspage) {
       title: 'Date',
       dataIndex: 'date',
       key: 'date',
-    render: (text) => 
-      <Copy><Date date={text} /></Copy>,
+      render: (text) =>
+      <Copy fontType="Body2"><Date date={text} /></Copy>
     },
     {
       title: 'Amount',
       dataIndex: 'amount',
       key: 'amount',
-      render: (text) => 
-      <Copy><Balance amount={text}/></Copy>,
+      render: (text) =>
+      <Copy fontType="Body2"><Balance amount={text}/></Copy>
     }
   ]
 

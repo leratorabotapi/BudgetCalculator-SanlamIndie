@@ -8,7 +8,7 @@ const Navbar = () => {
   return (
     <div className="navbar">
       <Link to="/">
-        <Icon size="large" name="home"></Icon>
+        <Icon name="home"></Icon>
         <Copy>Dashboard</Copy>
       </Link>   
       <Link to="/transactions">
