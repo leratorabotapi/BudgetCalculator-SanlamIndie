@@ -1,6 +1,7 @@
 import React from 'react'
 import Copy from '../components/Copy'
 import './style.css'
+import Accordion from '../components/Accordion/Accordion'
 
 import Layout from '../components/Layout'
 export default function Budget() {
@@ -9,6 +10,8 @@ export default function Budget() {
             <div className="App">
             <Copy fontType="H1">Budget</Copy>
             </div>
+            <h1>HI</h1>
+            <Accordion/>
         </Layout>
     )
 }

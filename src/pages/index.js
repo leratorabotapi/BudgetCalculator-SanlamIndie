@@ -8,6 +8,7 @@ import Topbar from '../components/Topbar'
 import 'antd/dist/antd.css';
 import { Button } from '../components/Button/Button'
 
+
 import ApplicationContext from '../components/ApplicationContext/Application';
 
 
@@ -160,6 +161,8 @@ export default function Home() {
       <Copy fontType="H1">Account Balance</Copy>
 
       <Balance amount={balance} />
+
+      
 
  {/*
       <pre>{JSON.stringify(transactions, null, 2)}</pre> */}
