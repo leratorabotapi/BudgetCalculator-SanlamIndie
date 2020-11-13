@@ -14,6 +14,7 @@
     height: 100%;
     background: #0000003a;
     transition: opacity 0.2s ease;
+    z-index: 1;
   }
   
   .modal {
@@ -26,10 +27,22 @@
     border-radius: 2px;
     transform: translateY(30%);
     transition: transform 0.2s ease;
-    box-shadow: 0 2px 8px 3px;
+}
+
+  .header {
+    position: absolute;
+    height: 59px;
+    left: 1px;
+    right: 1px;
+    top: 1px;
+    background: #EBEEF1;
+    display: flex;
+    justify-content: center;
   }
 
-  
+  .header > .copy-H4 {
+    margin-top: 15px;
+  }
 
   .modal button {
       margin: 10px;

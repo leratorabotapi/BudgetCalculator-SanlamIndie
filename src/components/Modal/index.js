@@ -10,10 +10,14 @@ const Modal = ({title, children, ...props}) => {
   return (
       <div className={showModal ? "overlay" : "hide"} onClick={closeModal}>
         <div className={showModal ? "modal" : "hide"}>
-            <Copy fontType="H1">{title}</Copy>
-            <Copy>{children}</Copy>
+            <div className="header">
+               <Copy fontType="H4" copyColor="black" weight="light">{title}</Copy> 
+            </div>
+            <div className="body">
+                <Copy>{children}</Copy>
+            </div>
             <div className="buttons">
-                <Button onClick={closeModal} primary={false} label="Cancel" backgroundColor="transparent" ></Button>
+                <Button onClick={closeModal} primary={false} label="Cancel" backgroundColor="grey" ></Button>
                 <Button onClick={closeModal} primary={true} label="Save Changes" backgroundColor="hotpink" ></Button> 
             </div>     
         </div>
