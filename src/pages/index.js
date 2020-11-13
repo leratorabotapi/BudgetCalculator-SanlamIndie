@@ -8,14 +8,12 @@ import Balance from '../components/Balance'
 import NavBar from '../components/Navbar'
 import Topbar from '../components/Topbar'
 import 'antd/dist/antd.css';
-import { Button } from '../components/Button/Button'
+// import { Button } from '../components/Button/Button'
 import { Table, Space, Row, Col } from 'antd'
 import 'antd/dist/antd.css'
-
-
 import ApplicationContext from '../components/ApplicationContext/Application';
 import Modal from "../components/Modal";
-
+import { Button } from '@indiefin/galaxy-button'
 
 export default function Home() {
 
@@ -157,30 +155,37 @@ export default function Home() {
     <div className="App">
     <Row>
     <div>
-    <Button
-        backgroundColor="#0075C9"
-        label="clear localStorage"
-        primary={true}
-      />
 
       {/* Modal button */}
-      {!showModal && ( <Button primary={false} label="Open Modal" onClick={openModal} /> )}
+      {!showModal && ( <Button kind="filled" color="blue" size="regular" handleClick={openModal}>Open Modal</Button> )}
       <Modal closeModal={closeModal} showModal={showModal} title="Modal Example">
         {/* <input type="text" id="category" name="" placeholder="e.g Category" /><br/>
         <hr /> */}
         <Balance amount={balance} />
       </Modal>
 
-      <Button
-          primary={true}
-          label="clear localStorage"
-          onClick={() => {
+      <Button 
+          kind="filled" 
+          color="blue" 
+          size="regular" 
+          handleClick={() => {
           localStorage.removeItem("transactions");
           setTransactions([]);
-        }}
-      />
+        }}>clear localStorage
+      </Button>
+
+      <Button
+          color="blue"
+          disabled={isFetching}
+          handleClick={() => fetchData()}
+          kind="filled"
+          size="regular"
+          type="button"
+        >
+         fetch new data
+        </Button>
  
-      <Button disabled={isFetching} onClick={() => fetchData()} primary={true} label="fetch new data" />
+      {/* <Button disabled={isFetching} onClick={() => fetchData()} primary={true} label="fetch new data" /> */}
 
       <br/>
 {/*
