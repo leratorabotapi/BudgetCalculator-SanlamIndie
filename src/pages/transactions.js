@@ -53,14 +53,15 @@ export default function Transactions (transactionspage) {
             <Card variant="medium" />
 
             <div className="table">
-            <Table pagination={{
+            <Table 
+              dataSource={transactions}
+              pagination={{
               total: transactions.length,
-              pageSize: transactions.length,
-              hideOnSinglePage: true
+              pageSize: 10,
+              hideOnSinglePage: false
             }}
-            columns={columns} 
-            dataSource={transactions}
-            size="small"
+            columns={columns}
+            
             />
             </div>
           </div>

@@ -157,11 +157,6 @@ export default function Home() {
     <div className="App">
     <Row>
     <div>
-    <Button
-        backgroundColor="#0075C9"
-        label="clear localStorage"
-        primary={true}
-      />
 
       {/* Modal button */}
       {!showModal && ( <Button primary={false} label="Open Modal" onClick={openModal} /> )}
