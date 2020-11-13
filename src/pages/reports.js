@@ -8,7 +8,7 @@ export default function Reports() {
     return (
         <Layout name="budget">
             <div className="App">
-            <Copy fontType="H1">Reports</Copy>
+            <Copy fontType="H1" weight="bold">Reports</Copy>
             </div>
         </Layout>
     )

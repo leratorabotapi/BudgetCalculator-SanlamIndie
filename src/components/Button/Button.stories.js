@@ -1,6 +1,6 @@
-/*import React from 'react';
+import React from 'react';
 
-import { Button } from './Button';
+import { Button } from './button';
 
 export default {
   title: 'BudgetCalculator/Button',
@@ -33,4 +33,4 @@ export const Small = Template.bind({});
 Small.args = {
   size: 'small',
   label: 'Button',
-};*/
+};
