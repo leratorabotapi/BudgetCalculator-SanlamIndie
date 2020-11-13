@@ -1,4 +1,4 @@
-import React from 'react'
+/*import React from 'react'
 import PropTypes from 'prop-types'
 import './style.css'
 
@@ -77,4 +77,4 @@ Button.defaultProps = {
   size: 'medium'
 }
 
-export default Button
+export default Button */

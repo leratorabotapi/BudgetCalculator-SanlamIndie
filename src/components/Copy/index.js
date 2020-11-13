@@ -2,17 +2,23 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import './styles.css'
 
-const Copy = ({ children, fontType, color }) => {
+const Copy = ({ children, fontType, color, weight }) => {
   let copyColor
   switch (color) {
     case 'black':
       copyColor = '#000000'
+      break
+    case 'white':
+      copyColor = '#ffffff'
       break
     case 'blue':
       copyColor = '#0075C9'
       break
     case 'wealthGrey':
       copyColor = '#333E48'
+      break
+    case 'wealthGrey300':
+      copyColor = '#737B81'
       break
     case 'error':
       copyColor = '#E61C01'
@@ -64,7 +70,7 @@ const Copy = ({ children, fontType, color }) => {
 
   return (
     <div
-      className={`copy-${fontType}`}
+      className={`copy-${fontType} ${weight}` }
       style={{
         color: `${copyColor}`,
         fontSize: `${fontStyle}px`

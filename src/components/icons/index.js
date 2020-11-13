@@ -1,0 +1,5 @@
+export { default as InsertChart } from './InsertChart'
+export { default as Paste } from './Paste'
+export { default as Person } from './Person'
+export { default as PersonOutline } from './PersonOutline'
+export { default as Receipt } from './Receipt'
