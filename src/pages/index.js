@@ -140,10 +140,16 @@ export default function Home() {
     }
   ]
 
+  
+  const rowSelection = {
+    onClick: (row) => {
+      console.log(row)
+    }
+  }
 
   return <div>
     <ApplicationContext.Provider
-    value= {{ pages, setPages, transactions }}>   
+    value= {{ pages, setPages, transactions, showModal, closeModal  }}>   
     
    
     <Topbar />
@@ -160,6 +166,8 @@ export default function Home() {
       {/* Modal button */}
       {!showModal && ( <Button primary={false} label="Open Modal" onClick={openModal} /> )}
       <Modal closeModal={closeModal} showModal={showModal} title="Modal Example">
+        {/* <input type="text" id="category" name="" placeholder="e.g Category" /><br/>
+        <hr /> */}
         <Balance amount={balance} />
       </Modal>
 

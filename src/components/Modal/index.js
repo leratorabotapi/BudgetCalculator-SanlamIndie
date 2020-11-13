@@ -1,11 +1,12 @@
-import React from "react"
+import React, { useContext } from "react"
 import PropTypes from 'prop-types'
+import ApplicationContext from '../ApplicationContext/Application'
 import { Button } from "../Button/Button";
 import Copy from "../Copy";
 import "./style.css"
 
-const Modal = ({title, children, ...props}) => {
-  const { showModal, closeModal } = props
+const Modal = ({ title, children }) => {
+  const { showModal, closeModal } = useContext(ApplicationContext)
 
   return (
       <div className={showModal ? "overlay" : "hide"} onClick={closeModal}>

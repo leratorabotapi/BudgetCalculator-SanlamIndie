@@ -18,15 +18,18 @@
   }
   
   .modal {
-    width: 354px;
-    height: 485px;
+    width: 509px;
+    height: 503px;
     position: relative;
     margin: 0px auto;
-    padding: 20px;
+    padding: 16px;
     background-color: #fff;
     border-radius: 2px;
     transform: translateY(30%);
     transition: transform 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
 }
 
   .header {
@@ -44,8 +47,26 @@
     margin-top: 15px;
   }
 
-  .modal button {
-      margin: 10px;
+  .body {
+      display: flex;
+      height: 370px;
+      /* padding-top: 45px; */
+  }
+
+  .buttons {
+      display: flex;
+      justify-content: space-between;   
+  }
+
+  input[type='text'] {
+    width: 477px;
+    height: 56px;
+    border-radius: 4px;
+    border-color: #737B81;
+  }
+
+  hr {
+    width: 477px;
   }
   
   
