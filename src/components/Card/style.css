@@ -1,31 +1,25 @@
 .card {
-  border: solid #a6a6a6 1.5px;
   border-radius: 2px;
   height: 50px;
   position: relative;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.08);
+  min-height: 136px;
+  min-width: 345px;
+  border-radius: 4px;
+  padding: 24px;
 }
 
-.primary {
-  width: 150px;
-  padding: 10px;
+.medium {
+  height: 136px;
+  width: 468px;
 }
 
-.small {
-  height: 25px;
-  width: 75px;
+.large {
+  height: 136px;
+  width: 591px;
 }
 
-.big {
-  height: 100px;
-  width: 300px;
-}
-
-.left {
-  position: absolute;
-  left: 10px;
-}
-
-.right {
-  position: absolute;
-  right: 10px;
+.xlarge {
+  height: 136px;
+  width: 960px;
 }

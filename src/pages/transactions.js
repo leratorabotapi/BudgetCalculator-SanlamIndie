@@ -3,6 +3,7 @@ import Copy from '../components/Copy'
 import Layout from '../components/Layout'
 import Date from '../components/Date'
 import Balance from '../components/Balance'
+import Card from '../components/Card'
 
 import { Table, Space } from 'antd'
 import 'antd/dist/antd.css'
@@ -47,7 +48,9 @@ export default function Transactions (transactionspage) {
 
   return (
     <Layout name={transactionspage}>
-            <Copy fontType="H1">Transactions</Copy>
+      <div className="App">
+            <Copy fontType="H1" weight="bold">Transactions</Copy>
+            <Card variant="medium" />
 
             <div className="table">
             <Table pagination={{
@@ -55,9 +58,12 @@ export default function Transactions (transactionspage) {
               pageSize: transactions.length,
               hideOnSinglePage: true
             }}
-            columns={columns} dataSource={transactions}
+            columns={columns} 
+            dataSource={transactions}
+            size="small"
             />
             </div>
+          </div>
       </Layout>
   )
 }

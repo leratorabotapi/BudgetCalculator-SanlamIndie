@@ -62,3 +62,7 @@
     letter-spacing: -0.2px;
     font-family: 'Roboto', sans-serif;
 }
+
+.bold {
+    font-weight: 700;
+}

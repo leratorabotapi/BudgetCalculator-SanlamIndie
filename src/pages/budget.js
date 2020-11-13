@@ -7,7 +7,7 @@ export default function Budget() {
     return (
         <Layout name="budget">
             <div className="App">
-            <Copy fontType="H1">Budget</Copy>
+            <Copy fontType="H1" weight="bold">Budget</Copy>
             </div>
         </Layout>
     )

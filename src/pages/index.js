@@ -3,12 +3,13 @@ import axios from "axios";
 import './style.css'
 import Copy from '../components/Copy'
 import Date from '../components/Date'
+import Image from '../components/Image'
 import Balance from '../components/Balance'
 import NavBar from '../components/Navbar'
 import Topbar from '../components/Topbar'
 import 'antd/dist/antd.css';
 import { Button } from '../components/Button/Button'
-import { Table, Space } from 'antd'
+import { Table, Space, Row, Col } from 'antd'
 import 'antd/dist/antd.css'
 
 import ApplicationContext from '../components/ApplicationContext/Application';
@@ -140,8 +141,9 @@ export default function Home() {
    
     <Topbar />
     <NavBar />
-    <div className="App dashbordParent">
-    <div className="dashboardDiv1">
+    <div className="App">
+    <Row>
+    <div>
     <Button
         backgroundColor="#0075C9"
         label="clear localStorage"
@@ -199,9 +201,13 @@ export default function Home() {
       ))}*/}
       
     </div>
+    </Row>
 
+    <Row>  
+
+    <Col span={12}>
     <div className="dashbordDiv2">
-      <Copy fontType="H4">Recent Transactions</Copy>
+      <Copy fontType="H4" weight="bold">Recent Transactions</Copy>
      <div className="dashboardTable">
         <Table pagination={{
               total: 5,
@@ -214,16 +220,22 @@ export default function Home() {
             />
       </div>
     </div>
+    </Col>
 
+    <Col span={12}>
     <div className="dashbordDiv3">
-    <Copy fontType="H4">Recent Transactions</Copy>
+    <Copy fontType="H4" weight="bold">Tips & Advice</Copy>
     <Copy fontType="Body2">Well done! you managed to save {} from last months budget. You can save up to 15% more if you target your spending on best value shopping deals :)</Copy>
+    <Image name="couch" heightOfImage="large"  />
     </div>
+    </Col>
 
+    </Row>
+    
+    <Row>
     <div className="dashbordDiv4">
-      <p></p>
     </div>
-      
+    </Row>
     </div>
     </ApplicationContext.Provider>
     </div>
