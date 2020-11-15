@@ -1,41 +1,43 @@
-import React from 'react'
+import React, { useState, useRef } from "react";
+import Chevron from "./Chevron";
 
-var acc = document.getElementsByClassName("accordion");
-var i;
+import "./style.css"
 
-for (i = 0; i < acc.length; i++) {
-  acc[i].addEventListener("click", function() {
-    this.classList.toggle("active");
-    var panel = this.nextElementSibling;
-    if (panel.style.display === "block") {
-      panel.style.display = "none";
-    } else {
-      panel.style.display = "block";
-    }
-  });
+function Accordion(props) {
+  const [setActive, setActiveState] = useState("");
+  const [setHeight, setHeightState] = useState("1px");
+  const [setRotate, setRotateState] = useState("accordion__icon");
+
+  const content = useRef(null);
+
+  function toggleAccordion() {
+    setActiveState(setActive === "" ? "active" : "");
+    setHeightState(
+      setActive === "active" ? "0px" : `${content.current.scrollHeight}px`
+    );
+    setRotateState(
+      setActive === "active" ? "accordion__icon" : "accordion__icon rotate"
+    );
+  }
+
+  return (
+    <div className="accordion__section">
+      <button className={`accordion ${setActive}`} onClick={toggleAccordion}>
+        <p className="accordion__title">{props.title}</p>
+        <Chevron className={`${setRotate}`} width={10} fill={"#777"} />
+      </button>
+      <div
+        ref={content}
+        style={{ maxHeight: `${setHeight}` }}
+        className="accordion__content"
+      >
+        <div
+          className="accordion__text"
+          dangerouslySetInnerHTML={{ __html: props.content }}
+        />
+      </div>
+    </div>
+  );
 }
 
-function Accordion() {
-    return (
-        <div>
-            <h2>Accordion</h2>
-
-                <button class="accordion">Section 1</button>
-                <div class="panel">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                </div>
-
-                <button class="accordion">Section 2</button>
-                <div class="panel">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                </div>
-
-                <button class="accordion">Section 3</button>
-                <div class="panel">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                </div>
-        </div>
-    )
-}
-
-export default Accordion
+export default Accordion;
