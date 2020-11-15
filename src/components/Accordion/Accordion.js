@@ -1,39 +1,65 @@
 import React from 'react'
+import { Collapse, Row, Col } from 'antd';
+import './style.css'
 
-var acc = document.getElementsByClassName("accordion");
-var i;
+const { Panel } = Collapse;
 
-for (i = 0; i < acc.length; i++) {
-  acc[i].addEventListener("click", function() {
-    this.classList.toggle("active");
-    var panel = this.nextElementSibling;
-    if (panel.style.display === "block") {
-      panel.style.display = "none";
-    } else {
-      panel.style.display = "block";
-    }
-  });
-}
+const text = `
+  A dog is a type of domesticated animal.
+  Known for its loyalty and faithfulness,
+  it can be found as a welcome guest in many households across the world.
+`;
 
 function Accordion() {
     return (
         <div>
-            <h2>Accordion</h2>
-
-                <button class="accordion">Section 1</button>
-                <div class="panel">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                </div>
-
-                <button class="accordion">Section 2</button>
-                <div class="panel">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                </div>
-
-                <button class="accordion">Section 3</button>
-                <div class="panel">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                </div>
+            <Collapse accordion>
+                <Panel header="Food" key="1" >
+                    <Row>
+                        <Col span={12}>KFC Cape Town(Card 6006)</Col> 
+                        <Col span={6}>03 Nov 2020</Col> 
+                        <Col span={6}>R50</Col>
+                    </Row>
+                    <hr className="unerline"/>
+                    <Row>
+                        <Col span={12}>Roccomamas(Card 6006)</Col> 
+                        <Col span={6}>01 Nov 2020</Col> 
+                        <Col span={6}>R100</Col>
+                    </Row>
+                    <hr className="unerline"/>
+                    <Row>
+                        <Col span={12}>Roccomamas(Card 6006)</Col> 
+                        <Col span={6}>01 Nov 2020</Col> 
+                        <Col span={6}>R100</Col>
+                    </Row> 
+                    <hr className="unerline"/>  
+                    <Row>
+                        <Col span={12}>KFC Cape Town(Card 6006)</Col> 
+                        <Col span={6}>01 Nov 2020</Col> 
+                        <Col span={6}>R50</Col>
+                    </Row> 
+                </Panel>
+                <Panel header="Communication" key="2">
+                    <Row>
+                        <Col span={12}>Telkom(Card 6006)</Col> 
+                        <Col span={6}>03 Nov 2020</Col> 
+                        <Col span={6}>R350</Col>
+                    </Row>
+                    <hr className="unerline"/>
+                    <Row>
+                        <Col span={12}>Vodacom(Card 6006)</Col> 
+                        <Col span={6}>01 Nov 2020</Col> 
+                        <Col span={6}>R100</Col>
+                    </Row>
+                </Panel>
+                <Panel header="Medical" key="3">
+                    <Row>
+                        <Col span={12}>Mellomed Hospital Bellville(Card 6006)</Col> 
+                        <Col span={6}>03 Nov 2020</Col> 
+                        <Col span={6}>R450</Col>
+                    </Row>
+                </Panel>
+            </Collapse>
         </div>
     )
 }
