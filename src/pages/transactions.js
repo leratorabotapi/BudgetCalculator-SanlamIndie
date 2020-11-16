@@ -5,11 +5,13 @@ import Date from '../components/Date'
 import Balance from '../components/Balance'
 import Card from '../components/Card'
 
-import { Table, Space, Row, Col } from 'antd'
+import { Table, Space, Row, Col, Tabs } from 'antd'
 import 'antd/dist/antd.css'
 
 export default function Transactions (transactionspage) {
   const transactions = JSON.parse(localStorage.getItem('transactions'))
+
+  const { TabPane } = Tabs;
 
   const columns = [
     {
@@ -17,7 +19,7 @@ export default function Transactions (transactionspage) {
       dataIndex: 'description',
       key: 'description',
       render: (text) =>
-      <Copy fontType="Body2">{text}</Copy>
+      <Copy color="wealthGrey300" fontType="Body2">{text}</Copy>
     },
     {
       title: 'Category',
@@ -25,7 +27,7 @@ export default function Transactions (transactionspage) {
       key: 'category',
       render: (text) => (
         <Space size="middle">
-          <Copy fontType="Body2">{text}</Copy>
+          <Copy color="wealthGrey300" fontType="Body2">{text}</Copy>
           <a>Edit</a>
         </Space>
       )
@@ -35,35 +37,39 @@ export default function Transactions (transactionspage) {
       dataIndex: 'date',
       key: 'date',
       render: (text) =>
-      <Copy fontType="Body2"><Date date={text} /></Copy>
+      <Copy color="wealthGrey300" fontType="Body2"><Date date={text} /></Copy>
     },
     {
       title: 'Amount',
       dataIndex: 'amount',
       key: 'amount',
       render: (text) =>
-      <Copy fontType="Body2"><Balance amount={text}/></Copy>
+      <Copy fontType="Body2"><Balance color="wealthGrey300"  amount={text}/></Copy>
     }
   ]
 
   return (
     <Layout name={transactionspage}>
       <div className="App">
-            <Row className="title">
+            <Row>
+            <Tabs defaultActiveKey="1"
+            tabBarGutter={58}
+            style={{ width: "100%" }}>
+              <TabPane tab="All" key="1">
+                <Row className="title">
             <Copy fontType="H1" weight="bold">Transactions</Copy>
             </Row>
-            <Row>
+                <Row>
             <Card variant="medium" />
             </Row>
-
-            <Row> 
+                <Row> 
               <Col span={24}>
             <div className="table">
             <Table
               dataSource={transactions}
               pagination={{
                 total: transactions.length,
-                pageSize: 10,
+                pageSize: 30,
                 hideOnSinglePage: false
               }}
             columns={columns}
@@ -72,6 +78,25 @@ export default function Transactions (transactionspage) {
             </div>
             </Col> 
             </Row>
+              </TabPane>
+              <TabPane tab="Money In" key="2">
+              <Row className="title">
+            <Copy fontType="H1" weight="bold">Transactions</Copy>
+            </Row>
+                Money In
+              </TabPane>
+              <TabPane tab="Money Out" key="3">
+              <Row className="title">
+            <Copy fontType="H1" weight="bold">Transactions</Copy>
+            </Row>
+                Money Out
+              </TabPane>
+              <TabPane tab="Pending" key="4" disabled>
+                Pending Tab
+              </TabPane>
+            </Tabs>
+            </Row>
+ 
           </div>
       </Layout>
   )

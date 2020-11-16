@@ -23,6 +23,10 @@ const Navbar = () => {
         <Icon name="report"></Icon>
         <Copy>Reports</Copy>
       </Link>
+      <Link to="/settings">
+        <Icon name=""></Icon>
+        <Copy>Settings</Copy>
+      </Link>
     </div>
   )
 }
