@@ -8,12 +8,12 @@ import Balance from '../components/Balance'
 import NavBar from '../components/Navbar'
 import Topbar from '../components/Topbar'
 import 'antd/dist/antd.css';
-// import { Button } from '../components/Button/Button'
+import { Button } from '../components/Button/Button'
 import { Table, Space, Row, Col } from 'antd'
 import 'antd/dist/antd.css'
 import ApplicationContext from '../components/ApplicationContext/Application';
 import Modal from "../components/Modal";
-import { Button } from '@indiefin/galaxy-button'
+// import { Button } from '@indiefin/galaxy-button'
 
 export default function Home() {
 
