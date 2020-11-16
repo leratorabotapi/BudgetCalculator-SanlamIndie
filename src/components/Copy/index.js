@@ -14,6 +14,9 @@ const Copy = ({ children, fontType, color, weight }) => {
     case 'blue':
       copyColor = '#0075C9'
       break
+    case 'blue700':
+      copyColor = '#0151A3'
+      break
     case 'wealthGrey':
       copyColor = '#333E48'
       break

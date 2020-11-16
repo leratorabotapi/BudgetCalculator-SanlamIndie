@@ -8,18 +8,20 @@ import Balance from '../components/Balance'
 import NavBar from '../components/Navbar'
 import Topbar from '../components/Topbar'
 import 'antd/dist/antd.css';
-import { Button } from '../components/Button/Button'
+// import { Button } from '../components/Button/Button'
 import { Table, Space, Row, Col } from 'antd'
 import 'antd/dist/antd.css'
 import ApplicationContext from '../components/ApplicationContext/Application';
 import Modal from "../components/Modal";
-// import { Button } from '@indiefin/galaxy-button'
+import { Button } from '@indiefin/galaxy-button'
+import social from '../components/images/social.png'
 
 export default function Home() {
 
   const [userSettings, setUserSettings] = useState({
     refreshOnLoad: true
   });
+
 
   const [transactions, setTransactions] = useState(() => {
     if (typeof window !== 'undefined') {
@@ -250,7 +252,9 @@ export default function Home() {
     <div className="dashbordDiv3">
     <Copy fontType="H4" weight="bold">Tips & Advice</Copy>
     <Copy fontType="Body2">Well done! you managed to save {} from last months budget. You can save up to 15% more if you target your spending on best value shopping deals :)</Copy>
-    <Image name="couch" heightOfImage="large"  />
+    <div className="homepageImg" >
+    <img src={social} alt="socialsetting" />
+    </div>
     </div>
     </Col>
 
@@ -258,6 +262,7 @@ export default function Home() {
     
     <Row>
     <div className="dashbordDiv4">
+    
     </div>
     </Row>
     </div>

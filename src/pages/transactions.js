@@ -5,7 +5,7 @@ import Date from '../components/Date'
 import Balance from '../components/Balance'
 import Card from '../components/Card'
 
-import { Table, Space } from 'antd'
+import { Table, Space, Row, Col } from 'antd'
 import 'antd/dist/antd.css'
 
 export default function Transactions (transactionspage) {
@@ -49,21 +49,29 @@ export default function Transactions (transactionspage) {
   return (
     <Layout name={transactionspage}>
       <div className="App">
+            <Row className="title">
             <Copy fontType="H1" weight="bold">Transactions</Copy>
+            </Row>
+            <Row>
             <Card variant="medium" />
+            </Row>
 
+            <Row> 
+              <Col span={24}>
             <div className="table">
-            <Table 
+            <Table
               dataSource={transactions}
               pagination={{
-              total: transactions.length,
-              pageSize: 10,
-              hideOnSinglePage: false
-            }}
+                total: transactions.length,
+                pageSize: 10,
+                hideOnSinglePage: false
+              }}
             columns={columns}
-            
+
             />
             </div>
+            </Col> 
+            </Row>
           </div>
       </Layout>
   )

@@ -18,6 +18,7 @@
   "dependencies": {
     "antd": "^4.8.2",
     "axios": "^0.21.0",
+    "chart.js": "^2.9.4",
     "gatsby": "^2.25.1",
     "moment": "^2.29.1",
     "react": "^16.12.0",

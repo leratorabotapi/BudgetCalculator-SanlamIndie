@@ -8,6 +8,14 @@
 .table {
   margin: 43px 0 80px;
 }
+.title {
+  padding: 40px 0;
+}
+
+.homepageImg {
+  height: 161px;
+  width: 253px;
+}
 
   .dashboardDiv1 { 
     border: 1px solid pink; 
@@ -35,4 +43,13 @@
 
   button {
     margin: 5px;
+  }
+
+  .ant-table-thead {
+    background-color: #E6F1FA !important;
+  }
+
+  th {
+    background-color: #E6F1FA !important;
+    color: #737B81 !important;
   }
