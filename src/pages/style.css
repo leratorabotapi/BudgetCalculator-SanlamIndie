@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
 
-.App{
-  font-family: 'Roboto', sans-serif;
+.App {
+  font-family: "Roboto", sans-serif;
   margin: 60px 40px 60px;
 }
 
@@ -9,30 +9,29 @@
   margin: 43px 0 80px;
 }
 
-  .dashboardDiv1 { 
-    border: 1px solid pink; 
-  }
-  .dashbordDiv2 { 
-    max-height: 375px;
-    padding: 40px 16px 0 0;
-    border-top: 1px solid #E0E0E0;
-    border-bottom: 1px solid #E0E0E0;
-    border-right: 1px solid #E0E0E0;
-    min-height: 375px; 
-  }
-  .dashboardTable{
-    margin-top: 27px;
-  }
-  .dashbordDiv3 { 
-    padding: 40px 0 16px 23px;
-    border-top: 1px solid #E0E0E0;
-    border-bottom: 1px solid #E0E0E0;
-    min-height: 375px;  
-  }
-  .dashbordDiv4 { 
-    
-  }
+.dashboardDiv1 {
+  border: 1px solid pink;
+}
+.dashbordDiv2 {
+  max-height: 375px;
+  padding: 40px 16px 0 0;
+  border-top: 1px solid #e0e0e0;
+  border-bottom: 1px solid #e0e0e0;
+  border-right: 1px solid #e0e0e0;
+  min-height: 375px;
+}
+.dashboardTable {
+  margin-top: 27px;
+}
+.dashbordDiv3 {
+  padding: 40px 0 16px 23px;
+  border-top: 1px solid #e0e0e0;
+  border-bottom: 1px solid #e0e0e0;
+  min-height: 375px;
+}
+.dashbordDiv4 {
+}
 
-  button {
-    margin: 5px;
-  }
+button {
+  margin: 5px;
+}

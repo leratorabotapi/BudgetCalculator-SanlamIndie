@@ -2,6 +2,7 @@ import React from 'react'
 import Copy from '../components/Copy'
 import './style.css'
 import Accordion from '../components/Accordion/Accordion'
+import Visacard from '../components/VisaCard/VisaCard'
 
 import Layout from '../components/Layout'
 export default function Budget() {
@@ -10,7 +11,7 @@ export default function Budget() {
             <div className="App">
             <Copy fontType="H1" weight="bold">Budget</Copy>
             </div>
-            <h1>HI</h1>
+            <Visacard/>
             <Accordion/>
         </Layout>
     )

@@ -1,0 +1,28 @@
+.slide {
+  border: 1 px solid;
+  background-color: #ffffff;
+  height: 150px;
+  border-radius: 10px;
+  border: 1px solid #888888;
+  padding: 10px;
+  box-shadow: 2px 2px 2px 2px #888888;
+  width: 95%;
+}
+
+.visa {
+  background-color: #ebeef1;
+  width: 15%;
+  border-radius: 15px;
+  color: #91989d;
+  float: right;
+}
+
+.cardNumber {
+  float: left;
+}
+
+.amount {
+  padding-bottom: 10px;
+  padding-top: 15%;
+  padding-right: 55%;
+}

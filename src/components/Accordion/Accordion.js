@@ -10,11 +10,15 @@ const text = `
   it can be found as a welcome guest in many households across the world.
 `;
 
+const contentStyle = {
+    textAlign: 'center',
+  };
+
 function Accordion() {
     return (
-        <div>
+        <div className="container">
             <Collapse accordion>
-                <Panel header="Food" key="1" >
+                <Panel header="Food" key="1" style={contentStyle}>
                     <Row>
                         <Col span={12}>KFC Cape Town(Card 6006)</Col> 
                         <Col span={6}>03 Nov 2020</Col> 
