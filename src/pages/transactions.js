@@ -1,14 +1,16 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import Copy from '../components/Copy'
-import Layout from '../components/Layout'
 import Date from '../components/Date'
 import Balance from '../components/Balance'
 import Card from '../components/Card'
+import Layout from '../components/layout/Layout'
+import Content from '../components/Content'
 
 import { Table, Space, Row, Col, Tabs } from 'antd'
 import 'antd/dist/antd.css'
 
 export default function Transactions (transactionspage) {
+
   const transactions = JSON.parse(localStorage.getItem('transactions'))
 
   const { TabPane } = Tabs;
@@ -49,7 +51,8 @@ export default function Transactions (transactionspage) {
   ]
 
   return (
-    <Layout name={transactionspage}>
+    <Layout >
+      <Content />
       <div className="App">
             <Row>
             <Tabs defaultActiveKey="1"
@@ -60,7 +63,7 @@ export default function Transactions (transactionspage) {
             <Copy fontType="H1" weight="bold">Transactions</Copy>
             </Row>
                 <Row>
-            <Card variant="medium" />
+            <Card moneyOut="R100" variant="medium" />
             </Row>
                 <Row> 
               <Col span={24}>

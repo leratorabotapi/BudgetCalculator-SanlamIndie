@@ -17,6 +17,9 @@ import Icon from "../components/Icon"
 import { Button } from '@indiefin/galaxy-button'
 import social from '../components/images/social.png'
 import { Line } from 'react-chartjs-2';
+import Layout from '../components/layout/Layout'
+import Content from '../components/Content'
+
 
 export default function Home() {
 
@@ -150,16 +153,16 @@ export default function Home() {
   }
 
   return <div>
+    <Layout>
     <ApplicationContext.Provider
-    value= {{ pages, setPages, transactions, showModal, closeModal  }}>   
+    value= {{ pages, setPages, transactions, setTransactions, showModal, closeModal }}>   
     
    
-    <Topbar />
-    <NavBar />
+    <Content />
     <div className="App">
     <Row>
       <Col span={23}>
-        <Copy fontType="Body3" >Wolfgang Mozart</Copy>
+        <Copy fontType="Body1" >Wolfgang Mozart</Copy>
       </Col>
       <Col span={1}>
           <Icon name="search" size="large" />
@@ -300,7 +303,9 @@ export default function Home() {
 
     </div>
     </Row>
+
     </div>
     </ApplicationContext.Provider>
+    </Layout>
     </div>
 }

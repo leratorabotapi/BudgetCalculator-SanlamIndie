@@ -5,7 +5,7 @@ import { Row, Col } from 'antd'
 import 'antd/dist/antd.css'
 
 function Card (props) {
-  const { variant = 'primary', children, ...rest } = props
+  const { moneyOut, variant = 'primary', children, ...rest } = props
   return (
         <div className={`card ${variant}`}{...rest}>
             <Row>
@@ -22,7 +22,7 @@ function Card (props) {
            
             <Col span={12}>
             <Copy color="wealthGrey300" fontType='Body1'>
-            R1500
+            {moneyOut}
             <br/> 
             R6000
             </Copy>
