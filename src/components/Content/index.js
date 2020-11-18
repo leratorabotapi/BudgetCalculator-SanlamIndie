@@ -7,18 +7,19 @@ import Copy from '../Copy'
 import Topbar from '../Topbar'
 
 const Content = () => {
-  const { hello, storeObject } = useContext(TransactionContext)
+  const { hello, storeObject, transactions } = useContext(TransactionContext)
   console.log(hello)
 
   return <div>      
     <Topbar />
-        <input type="text" onChange={(e) => storeObject(e.target.value)}/>
+    <input type="text" onChange={(e) => storeObject(e.target.value)}/>
     <div className="navbar">
-      <Link to="/" state={{ hello }}>
+    
+      <Link to="/"  state={{ transactions }}>
         <Icon color="blue700" name="home"></Icon>
         <Copy color="blue700">Dashboard</Copy>
       </Link>
-      <Link to="/transactions" state={{ hello }}>
+      <Link to="/transactions" state={{ transactions }}>
         <Icon name="transaction"></Icon>
         <Copy>Transactions</Copy>
       </Link>
