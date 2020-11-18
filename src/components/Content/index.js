@@ -10,10 +10,8 @@ const Content = () => {
   const { hello, storeObject } = useContext(TransactionContext)
   console.log(hello)
 
-  return <div>
-        
+  return <div>      
     <Topbar />
-    {hello}
         <input type="text" onChange={(e) => storeObject(e.target.value)}/>
     <div className="navbar">
       <Link to="/" state={{ hello }}>
@@ -24,7 +22,7 @@ const Content = () => {
         <Icon name="transaction"></Icon>
         <Copy>Transactions</Copy>
       </Link>
-      <Link to="/budget">
+      <Link to="/budget" state={{ hello }}>
         <Icon name="budget"></Icon>
         <Copy>Budget</Copy>
       </Link>
