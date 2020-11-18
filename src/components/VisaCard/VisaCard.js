@@ -24,7 +24,7 @@ function VisaCard() {
         <div>
             <CarouselProvider
                 naturalSlideWidth={30}
-                naturalSlideHeight={15}
+                naturalSlideHeight={25}
                 totalSlides={3}
             >
                 <Row>
@@ -34,7 +34,7 @@ function VisaCard() {
                     <Col style={contentStyle} span={8}>
                         <Slider>
                             <Slide index={0}> 
-                            
+
                             <div className='slide'>
                                 <div className='amount'><Copy fontType="H2" weight="bold" className='amount'> R2 300.00</Copy> <br/></div>
                                 <div className='cardNumber'>***6559</div>

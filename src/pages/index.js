@@ -4,6 +4,7 @@ import './style.css'
 import Copy from '../components/Copy'
 import Balance from '../components/Balance'
 import 'antd/dist/antd.css'
+
 // import { Button } from '../components/Button/Button'
 import { Table, Space, Row, Col } from 'antd'
 
@@ -15,6 +16,7 @@ import social from '../components/images/social.png'
 import { Line } from 'react-chartjs-2'
 import Layout from '../components/layout/Layout'
 import Content from '../components/Content'
+import Visacard from '../components/VisaCard/VisaCard'
 
 export default function Home ({ location }) {
   const columns = [
@@ -65,6 +67,7 @@ export default function Home ({ location }) {
                 <Copy fontType="H3" variant="light">
                   Your current budget
                 </Copy>
+                <Visacard/>
               </Col>
             </Row>
             <Row>
