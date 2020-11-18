@@ -1,5 +1,4 @@
-import React, { useContext } from 'react'
-import TransactionContext from '../context/transations'
+import React from 'react'
 import Copy from '../components/Copy'
 import './style.css'
 import Accordion from '../components/Accordion/Accordion'
@@ -10,7 +9,7 @@ import Card from '../components/Card'
 import Layout from '../components/layout/Layout'
 import Content from '../components/Content'
 
-const Budget = ({location}) => {
+const Budget = () => {
     return (
         <Layout >
             <Content />
@@ -28,7 +27,6 @@ const Budget = ({location}) => {
             </Row>
 
             <Accordion/>
-            <Copy><pre>{JSON.stringify(location?.state?.hello, null,2 )}</pre>123</Copy>
 
             </div>    
         </Layout>
