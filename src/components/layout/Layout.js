@@ -80,6 +80,8 @@ const Layout = ({ children }) => {
     }
   }, [])
 
+  const getExpenses = () => {}
+
   // calculates the total balance -> all negative amounts(expenses) + all positive amounts(income)
   const getBalance = () => {
     const amounts = transactions.map(income => income.amount)
@@ -87,13 +89,20 @@ const Layout = ({ children }) => {
     setBalance(money)
   }
 
+console.log(balance)
+
   //getBalance is run everytime transactions is updated
   useEffect(() => {
     getBalance()
   }, [transactions])
 
   return (
-        <TransactionContext.Provider value={{ transactions }}>
+        <TransactionContext.Provider value={{ 
+          transactions, setTransactions, 
+          showModal, setShowModal,
+          balance, setBalance,
+          isFetching, setIsFetching 
+          }}>
             {children}
         </TransactionContext.Provider>
   )

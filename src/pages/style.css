@@ -56,16 +56,51 @@ th {
 }
 
 .reportDiv1 {
-  padding: 40px 16px 0 0;
   border-top: 1px solid #fff;
   border-bottom: 1px solid #e0e0e0;
   border-right: 1px solid #e0e0e0;
-  min-height: 375px;
+  min-height: 200px;
 }
 
 .reportDiv2 {
-  padding: 40px 0 16px 23px;
+  padding: 40px;
   border-top: 1px solid transparent;
   border-bottom: 1px solid #e0e0e0;
-  min-height: 375px;
+  min-height: 200px;
+}
+
+.settings-block {
+  border: 1px solid #e0e0e0;
+  margin: 15px;
+}
+
+.settings-block-content {
+  margin: 15px;
+}
+
+.settings-block-content > a {
+  position: relative;
+}
+
+.checkboxes {
+  display: flex;
+}
+
+progress {
+  -webkit-appearance: none;
+  width: 300px;
+  height: 24px;
+  padding-top: 15px;
+  border-radius: 4px;
+}
+
+progress::-webkit-progress-bar {
+  -webkit-appearance: none;
+  background: #E6F1FA;
+  border-radius: 4px;
+}
+progress::-webkit-progress-value {
+  -webkit-appearance: none;
+  background: #4483ca;
+  border-radius: 4px;
 }

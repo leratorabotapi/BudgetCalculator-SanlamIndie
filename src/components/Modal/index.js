@@ -1,13 +1,13 @@
 import React, { useContext } from 'react'
 import PropTypes from 'prop-types'
-import ApplicationContext from '../ApplicationContext/Application'
+import TransactionContext from '../../context/transations'
 // import { Button } from "../Button/Button";
 import { Button } from '@indiefin/galaxy-button'
 import Copy from '../Copy'
 import './style.css'
 
 const Modal = ({ title, children }) => {
-  const { showModal, closeModal } = useContext(ApplicationContext)
+  const { showModal, closeModal } = useContext(TransactionContext)
 
   return (
       <div className={showModal ? 'overlay' : 'hide'} onClick={closeModal}>

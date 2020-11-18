@@ -4,7 +4,7 @@ import Copy from '../components/Copy'
 import Layout from '../components/layout/Layout'
 import { Row, Col } from 'antd'
 import { Line, HorizontalBar, Doughnut, Bar } from 'react-chartjs-2'
-import Content from '../components/Content';
+import Content from '../components/Content'
 
 export default function Reports () {
   const lineData = {
@@ -73,17 +73,6 @@ export default function Reports () {
       }
     ]
   }
-
-  const progressbar = {
-    labels: false,
-    datasets: [
-      {
-        backgroundColor: '#4483CA',
-        barThickness: 9,
-        data: [3, 6]
-      }
-    ]
-  }
   return (
     <Layout name="reports">
       <Content />
@@ -100,30 +89,10 @@ export default function Reports () {
                 <Copy fontType="H4" weight="bold">
                   Feedback
                 </Copy>
-                <Copy fontType="Body2">
-                  Well done! you managed to save {} from last months budget. You
-                  can save up to 15% more if you target your spending on best
-                  value shopping deals :)
+                <Copy style={{ width: '360' }} fontType="Body2">
+                Great job! you’re still spending within your budgeted limit for all categories.
                 </Copy>
-                <HorizontalBar
-                    data={progressbar}
-                      options={{
-                        responsive: true,
-                        legend: {
-                          display: false
-                        },
-                        scales: {
-                          xAxes: [{
-                            stacked: true,
-                            display: false
-                          }],
-                          yAxes: [{
-                            stacked: true,
-                            display: false
-                          }]
-                        }
-                      }}
-                  />
+                <progress value="40" max="100"></progress>
               </div>
             </Col>
           </Row>
