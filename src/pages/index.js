@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import axios from 'axios'
 import './style.css'
 import Copy from '../components/Copy'
 import Balance from '../components/Balance'
@@ -8,10 +7,9 @@ import 'antd/dist/antd.css'
 // import { Button } from '../components/Button/Button'
 import { Table, Space, Row, Col } from 'antd'
 
-import ApplicationContext from '../components/ApplicationContext/Application'
-// import Modal from '../components/Modal'
+import Modal from '../components/Modal'
 import Icon from '../components/Icon'
-// import { Button } from '@indiefin/galaxy-button'
+import { Button } from '@indiefin/galaxy-button'
 import social from '../components/images/social.png'
 import { Line } from 'react-chartjs-2'
 import Layout from '../components/layout/Layout'
@@ -19,6 +17,10 @@ import Content from '../components/Content'
 import Visacard from '../components/VisaCard/VisaCard'
 
 export default function Home ({ location }) {
+
+  const openModal = () => setShowModal(true)
+  const closeModal = () => setShowModal(false)
+
   const columns = [
     {
       title: 'Description',
@@ -70,10 +72,10 @@ export default function Home ({ location }) {
                 <Visacard/>
               </Col>
             </Row>
+
             <Row>
               <Col span={24}>
-                {/* Modal button
-                {!showModal && (
+              {!location?.state?.showModal && (
                   <Button
                     kind="filled"
                     color="blue"
@@ -85,12 +87,12 @@ export default function Home ({ location }) {
                 )}
                 <Modal
                   closeModal={closeModal}
-                  showModal={showModal}
+                  showModal={location?.state?.showModal}
                   title="Modal Example"
                 >
                    <input type="text" id="category" name="" placeholder="e.g Category" /><br/>
                     <hr />
-                  <Balance amount={balance} />
+                  <Balance amount={location?.state?.balance} />
                 </Modal>
 
                 <Button
@@ -99,15 +101,16 @@ export default function Home ({ location }) {
                   size="regular"
                   handleClick={() => {
                     localStorage.removeItem("transactions")
-                    setTransactions([])
+                    location?.target?.setTransactions([])
                   }}
                 >
                   clear localStorage
                 </Button>
 
+
                 <Button
                   color="blue"
-                  disabled={isFetching}
+                  disabled={location?.state?.isFetching}
                   handleClick={() => fetchData()}
                   kind="filled"
                   size="regular"
@@ -116,12 +119,13 @@ export default function Home ({ location }) {
                   fetch new data
                 </Button>
 
-      <Copy fontType="H1">Account Balance</Copy>
+                <Balance amount={location?.state?.balance} />
 
-      <Balance amount={balance} />
-
-      <pre>{JSON.stringify(location.state.transactions, null, 2)}</pre>
+                <div>
+      <pre>{JSON.stringify(location?.state?.transactions, null, 2)}</pre>
     </div>
+
+                {/* Modal button
 
     <div>
       <Copy fontType="H1">Expenses</Copy>
