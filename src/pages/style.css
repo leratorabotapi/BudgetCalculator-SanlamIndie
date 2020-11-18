@@ -6,6 +6,7 @@
   min-height: 100vh;
   background: #fff;
 }
+
 .table {
   margin: 43px 0 80px;
 }
@@ -39,7 +40,6 @@
   min-height: 375px;
 }
 .dashbordDiv4 {
-  margin: 40px 0;
 }
 
 button {
@@ -55,16 +55,17 @@ th {
   color: #737b81 !important;
 }
 
-.ant-tabs-tab {
-  color: #333e48;
-  font-size: 16px !important;
-  font-weight: 500;
+.reportDiv1 {
+  padding: 40px 16px 0 0;
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #e0e0e0;
+  border-right: 1px solid #e0e0e0;
+  min-height: 375px;
 }
 
-.ant-tabs-tab:hover {
-  color: #0075c9 !important;
-}
-
-.ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
-  color: #0075c9 !important;
+.reportDiv2 {
+  padding: 40px 0 16px 23px;
+  border-top: 1px solid transparent;
+  border-bottom: 1px solid #e0e0e0;
+  min-height: 375px;
 }
