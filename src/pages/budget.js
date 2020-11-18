@@ -3,7 +3,7 @@ import TransactionContext from '../context/transations'
 import Copy from '../components/Copy'
 import './style.css'
 import Accordion from '../components/Accordion/Accordion'
-import Visacard from '../components/VisaCard/VisaCard'
+
 import {  Row } from 'antd'
 import 'antd/dist/antd.css'
 import Card from '../components/Card'
@@ -20,8 +20,6 @@ const Budget = () => {
 
             <Row className="title">  
             <Copy fontType="H1" weight="bold">Budget</Copy>
-            
-            <Visacard/>
             </Row>
             
 

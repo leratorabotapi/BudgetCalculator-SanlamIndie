@@ -19,6 +19,7 @@ import social from "../components/images/social.png"
 import { Line } from "react-chartjs-2"
 import Layout from "../components/layout/Layout"
 import Content from "../components/Content"
+import Visacard from '../components/VisaCard/VisaCard'
 
 export default function Home() {
   const [userSettings, setUserSettings] = useState({
@@ -166,6 +167,7 @@ export default function Home() {
                 <Copy fontType="H3" variant="light">
                   Your current budget
                 </Copy>
+                <Visacard/>
               </Col>
             </Row>
             <Row>
