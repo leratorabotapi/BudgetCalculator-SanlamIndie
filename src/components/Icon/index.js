@@ -6,9 +6,12 @@ import {
   Person,
   PersonOutline,
   Receipt,
+  Sanlam,
+  Search,
 } from '../icons';
 
-const Icon = ({ name, size }) => {
+const Icon = ({ name, size, color }) => {
+
   let content
   switch (name) {
     case 'home':
@@ -23,11 +26,51 @@ const Icon = ({ name, size }) => {
     case 'budget':
       content = <Receipt />
       break
+    case 'sanlam':
+      content = <Sanlam />
+      break
+    case 'search':
+      content = <Search />
+      break
     case 'account':
       content = '🧾'
       break
     case 'dashboard':
       content = '📊'
+      break
+
+    default:
+      break
+  }
+
+  let iconColor
+  switch (color) {
+    case 'black':
+      iconColor = '#000000'
+      break
+    case 'white':
+      iconColor = '#ffffff'
+      break
+    case 'blue':
+      iconColor = '#0075C9'
+      break
+      case 'blue700':
+      iconColor = '#0151A3'
+      break
+    case 'wealthGrey':
+      iconColor = '#333E48'
+      break
+    case 'wealthGrey300':
+      iconColor = '#737B81'
+      break
+    case 'error':
+      iconColor = '#E61C01'
+      break
+    case 'success':
+      iconColor = '#018F01'
+      break
+    case 'alert':
+      iconColor = '#F26901'
       break
 
     default:
@@ -59,6 +102,7 @@ const Icon = ({ name, size }) => {
         height: `${iconSize}px`,
         width: `${iconSize}px`,
         margin: `15px 15px`,
+        color: `${color}`,
       }}
     >
       {content}

@@ -2,11 +2,20 @@
 
 .App {
   font-family: "Roboto", sans-serif;
-  margin: 60px 40px 60px;
+  padding: 0px 40px 60px;
+  min-height: 100vh;
+  background: #fff;
 }
-
 .table {
   margin: 43px 0 80px;
+}
+.title {
+  padding: 40px 0;
+}
+
+.homepageImg {
+  height: 161px;
+  width: 253px;
 }
 
 .dashboardDiv1 {
@@ -30,8 +39,32 @@
   min-height: 375px;
 }
 .dashbordDiv4 {
+  margin: 40px 0;
 }
 
 button {
   margin: 5px;
+}
+
+.ant-table-thead {
+  background-color: #e6f1fa !important;
+}
+
+th {
+  background-color: #e6f1fa !important;
+  color: #737b81 !important;
+}
+
+.ant-tabs-tab {
+  color: #333e48;
+  font-size: 16px !important;
+  font-weight: 500;
+}
+
+.ant-tabs-tab:hover {
+  color: #0075c9 !important;
+}
+
+.ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+  color: #0075c9 !important;
 }

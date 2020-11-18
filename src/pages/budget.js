@@ -3,16 +3,33 @@ import Copy from '../components/Copy'
 import './style.css'
 import Accordion from '../components/Accordion/Accordion'
 import Visacard from '../components/VisaCard/VisaCard'
+import {  Row } from 'antd'
+import 'antd/dist/antd.css'
+import Card from '../components/Card'
+import Layout from '../components/layout/Layout'
+import Content from '../components/Content'
 
-import Layout from '../components/Layout'
 export default function Budget() {
     return (
-        <Layout name="budget">
+        <Layout>
+            <Content />
             <div className="App">
+
+            <Row className="title">  
             <Copy fontType="H1" weight="bold">Budget</Copy>
-            </div>
+            
             <Visacard/>
+            </Row>
+            
+
+            <Row>
+                <Card variant="xlarge" />
+            </Row>
+
             <Accordion/>
+            
+
+            </div>    
         </Layout>
     )
 }
