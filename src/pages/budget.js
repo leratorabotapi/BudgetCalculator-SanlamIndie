@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import TransactionContext from '../context/transations'
 import Copy from '../components/Copy'
 import './style.css'
 import Accordion from '../components/Accordion/Accordion'
@@ -9,9 +10,11 @@ import Card from '../components/Card'
 import Layout from '../components/layout/Layout'
 import Content from '../components/Content'
 
-export default function Budget() {
+const Budget = () => {
+    
+
     return (
-        <Layout>
+        <Layout >
             <Content />
             <div className="App">
 
@@ -27,9 +30,11 @@ export default function Budget() {
             </Row>
 
             <Accordion/>
-            
+            <Copy></Copy>
 
             </div>    
         </Layout>
     )
 }
+
+export default Budget
