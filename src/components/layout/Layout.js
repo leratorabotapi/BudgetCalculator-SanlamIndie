@@ -2,14 +2,7 @@ import React, { useState, useEffect } from "react"
 import axios from "axios"
 import TransactionContext from '../../context/transations'
 
-const Layout = ({ children, initialData }) => {
-
-  const [object, setObject] = useState(initialData || localStorage.getItem('state'))
-
-  const storeObject = (newValue) => {
-    setObject(newValue)
-    localStorage.setItem('state', object)
-  }
+const Layout = ({ children }) => {
 
   const [userSettings, setUserSettings] = useState({
     refreshOnLoad: true,
@@ -100,7 +93,7 @@ const Layout = ({ children, initialData }) => {
   }, [transactions])
 
   return (
-        <TransactionContext.Provider value={{ hello: object, storeObject, transactions }}>
+        <TransactionContext.Provider value={{ transactions }}>
             {children}
         </TransactionContext.Provider>
   )
