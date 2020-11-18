@@ -10,9 +10,7 @@ import Card from '../components/Card'
 import Layout from '../components/layout/Layout'
 import Content from '../components/Content'
 
-const Budget = () => {
-    
-
+const Budget = ({location}) => {
     return (
         <Layout >
             <Content />
@@ -28,7 +26,7 @@ const Budget = () => {
             </Row>
 
             <Accordion/>
-            <Copy></Copy>
+            <Copy><pre>{JSON.stringify(location?.state?.hello, null,2 )}</pre>123</Copy>
 
             </div>    
         </Layout>

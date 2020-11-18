@@ -9,9 +9,7 @@ import Content from '../components/Content'
 import { Table, Space, Row, Col, Tabs } from 'antd'
 import 'antd/dist/antd.css'
 
-export default function Transactions (transactionspage) {
-
-  const transactions = JSON.parse(localStorage.getItem('transactions'))
+const Transactions = ({location}) => {
 
   const { TabPane } = Tabs;
 
@@ -69,9 +67,9 @@ export default function Transactions (transactionspage) {
               <Col span={24}>
             <div className="table">
             <Table
-              dataSource={transactions}
+              dataSource={location?.state?.transactions}
               pagination={{
-                total: transactions.length,
+                total: location?.state?.transactions.length,
                 pageSize: 30,
                 hideOnSinglePage: false
               }}
@@ -104,3 +102,5 @@ export default function Transactions (transactionspage) {
       </Layout>
   )
 }
+
+export default Transactions
