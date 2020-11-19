@@ -84,13 +84,33 @@ const Transactions = ({location}) => {
               <Row className="title">
             <Copy fontType="H1" weight="bold">Transactions</Copy>
             </Row>
-                Money In
+               
+                <Table
+              dataSource={location?.state?.moneyIn}
+              pagination={{
+                total: location?.state?.moneyIn.length,
+                pageSize: 30,
+                hideOnSinglePage: false
+              }}
+            columns={columns}
+
+            />
               </TabPane>
               <TabPane tab="Money Out" key="3">
               <Row className="title">
             <Copy fontType="H1" weight="bold">Transactions</Copy>
             </Row>
-                Money Out
+                
+                <Table
+              dataSource={location?.state?.moneyOut}
+              pagination={{
+                total: location?.state?.moneyOut.length,
+                pageSize: 30,
+                hideOnSinglePage: false
+              }}
+            columns={columns}
+
+            />
               </TabPane>
               <TabPane tab="Pending" key="4" disabled>
                 Pending Tab

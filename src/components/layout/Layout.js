@@ -61,6 +61,8 @@ const Layout = ({ children }) => {
           transformedData.push({ ...transaction, category: "Uncatergorised" })
         })
 
+        console.log("this ran fine")
+
         localStorage.setItem("transactions", JSON.stringify(transformedData))
 
         setTransactions(data)
@@ -80,6 +82,13 @@ const Layout = ({ children }) => {
     }
   }, [])
 
+  const moneyOut = transactions.filter(expenses => expenses.amount < 0 )
+  console.log(moneyOut)
+
+  const moneyIn = transactions
+  .filter(income => income.amount > 0 )
+  console.log(moneyIn)
+
   const getExpenses = () => {}
 
   // calculates the total balance -> all negative amounts(expenses) + all positive amounts(income)
@@ -88,8 +97,6 @@ const Layout = ({ children }) => {
     const money = amounts.reduce((acc, item) => (acc += item), 0).toFixed(2)
     setBalance(money)
   }
-
-console.log(balance)
 
   //getBalance is run everytime transactions is updated
   useEffect(() => {
@@ -101,7 +108,8 @@ console.log(balance)
           transactions, setTransactions, 
           showModal, setShowModal,
           balance, setBalance,
-          isFetching, setIsFetching 
+          isFetching, setIsFetching,
+          moneyIn, moneyOut 
           }}>
             {children}
         </TransactionContext.Provider>
