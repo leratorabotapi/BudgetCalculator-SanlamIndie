@@ -61,8 +61,6 @@ const Layout = ({ children }) => {
           transformedData.push({ ...transaction, category: "Uncatergorised" })
         })
 
-        console.log("this ran fine")
-
         localStorage.setItem("transactions", JSON.stringify(transformedData))
 
         setTransactions(data)
@@ -82,12 +80,12 @@ const Layout = ({ children }) => {
     }
   }, [])
 
+  // filter Expenses- MoneyOut
   const moneyOut = transactions.filter(expenses => expenses.amount < 0 )
-  console.log(moneyOut)
 
-  const moneyIn = transactions
-  .filter(income => income.amount > 0 )
-  console.log(moneyIn)
+   // filter Income- MoneyIn
+  const moneyIn = transactions.filter(income => income.amount > 0 )
+
 
   const getExpenses = () => {}
 

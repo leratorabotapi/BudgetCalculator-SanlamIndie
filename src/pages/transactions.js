@@ -61,7 +61,7 @@ const Transactions = ({location}) => {
             <Copy fontType="H1" weight="bold">Transactions</Copy>
             </Row>
                 <Row>
-            <Card moneyOut="R100" variant="medium" />
+            <Card moneyOut="100" moneyIn="200" variant="medium" />
             </Row>
                 <Row> 
               <Col span={24}>
@@ -84,6 +84,7 @@ const Transactions = ({location}) => {
               <Row className="title">
             <Copy fontType="H1" weight="bold">Transactions</Copy>
             </Row>
+            <Card moneyOut="100" moneyIn="200" variant="medium" />
                
                 <Table
               dataSource={location?.state?.moneyIn}

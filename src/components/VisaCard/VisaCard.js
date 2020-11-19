@@ -65,7 +65,9 @@ function VisaCard() {
                 </Row>
                 <Row>
                     <Col span={6}></Col>
-                    <Col span={4}> <Button kind="fab"/></Col>
+                    <Col span={4}> 
+                    <Button kind="fab"></Button>
+                    </Col>
                     <Col span={4}> <Button kind="fab"/></Col>
                     <Col span={4}> <Button kind="fab"/></Col>
                     <Col span={6}></Col>

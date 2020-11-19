@@ -122,37 +122,8 @@ export default function Home ({ location }) {
                 <Balance amount={location?.state?.balance} />
 
                 <div>
-      <pre>{JSON.stringify(location?.state?.transactions, null, 2)}</pre>
-    </div>
-
-                {/* Modal button
-
-    <div>
-      <Copy fontType="H1">Expenses</Copy>
-
-      {transactions
-      .filter(expenses => expenses.amount < 0 )
-      .map(expenses => (
-
-      <Copy>
-      <div>
-        <pre>{JSON.stringify(expenses, null, 2)}</pre>
-      </div>
-      </Copy>
-
-      ))}
-    </div>
-
-    <div>
-    <Copy fontType="H1">Income</Copy>
-    {transactions
-      .filter(income => income.amount > 0 )
-      .map(income => (
-
-      <div>
-       <Copy> <pre>{JSON.stringify(income, null, 2)}</pre></Copy>
-      </div>
-      ))} */}
+            <pre>{JSON.stringify(location?.state?.transactions, null, 2)}</pre>
+          </div>
               </Col>
             </Row>
 
