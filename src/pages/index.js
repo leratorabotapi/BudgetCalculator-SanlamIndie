@@ -60,7 +60,7 @@ export default function Home ({ location }) {
           <div className="App">
             <Row>
               <Col span={23}>
-                <Copy fontType="Body1">Wolfgang Mozart</Copy>
+                <Copy fontType="Body1">Lethabo Moeketsi</Copy>
               </Col>
               <Col span={1}>
                 <Icon name="search" size="large" />
@@ -71,12 +71,13 @@ export default function Home ({ location }) {
                   Your current budget
                 </Copy>
                 <Visacard/>
-                <Pill />
+               
               </Col>
             </Row>
 
             <Row>
               <Col span={24}>
+              {/*
               {!location?.state?.showModal && (
                   <Button
                     kind="filled"
@@ -121,7 +122,7 @@ export default function Home ({ location }) {
                   fetch new data
                 </Button>
 
-                <Balance amount={location?.state?.balance} />
+                <Balance amount={location?.state?.balance} /> */}
 
                 <div>
             <pre>{JSON.stringify(location?.state?.transactions, null, 2)}</pre>

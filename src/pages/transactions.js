@@ -84,6 +84,7 @@ const Transactions = ({location}) => {
               <Row className="title">
             <Copy fontType="H1" weight="bold">Transactions</Copy>
             </Row>
+            
             <Card moneyOut={location?.state?.finalTotalMoneyOut} moneyIn={location?.state?.finalTotalMoneyIn} variant="medium" />
                
                 <Table
