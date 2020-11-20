@@ -59,14 +59,14 @@ export default function Home ({ location }) {
           <div className="App">
             <Row>
               <Col span={23}>
-                <Copy fontType="Body1">Wolfgang Mozart</Copy>
+                <Copy fontType="Body1" size="Body1">Wolfgang Mozart</Copy>
               </Col>
               <Col span={1}>
                 <Icon name="search" size="large" />
               </Col>
 
               <Col span={24} align="middle">
-                <Copy fontType="H3" variant="light">
+                <Copy size="H3" variant="light">
                   Your current budget
                 </Copy>
                 <Visacard/>

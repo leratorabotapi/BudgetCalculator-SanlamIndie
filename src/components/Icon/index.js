@@ -8,22 +8,22 @@ import {
   Receipt,
   Sanlam,
   Search,
-} from '../icons';
+  Tune
+} from '../icons'
 
 const Icon = ({ name, size, color }) => {
-
   let content
   switch (name) {
     case 'home':
       content = <Person />
       break
-    case 'report':
+    case 'reports':
       content = <InsertChart />
       break
-    case 'transaction':
+    case 'budget':
       content = <Paste />
       break
-    case 'budget':
+    case 'transactions':
       content = <Receipt />
       break
     case 'sanlam':
@@ -32,8 +32,8 @@ const Icon = ({ name, size, color }) => {
     case 'search':
       content = <Search />
       break
-    case 'account':
-      content = '🧾'
+    case 'settings':
+      content = <Tune />
       break
     case 'dashboard':
       content = '📊'
@@ -54,7 +54,7 @@ const Icon = ({ name, size, color }) => {
     case 'blue':
       iconColor = '#0075C9'
       break
-      case 'blue700':
+    case 'blue700':
       iconColor = '#0151A3'
       break
     case 'wealthGrey':
@@ -93,16 +93,14 @@ const Icon = ({ name, size, color }) => {
       break
   }
 
-
-
   return (
     <div
       style={{
         fontSize: `${iconSize}px`,
         height: `${iconSize}px`,
         width: `${iconSize}px`,
-        margin: `15px 15px`,
         color: `${color}`,
+        margin: 'auto auto'
       }}
     >
       {content}
@@ -118,11 +116,11 @@ Icon.propTypes = {
   /**
    * size of the icon to display
    */
-  size: PropTypes.oneOf(['small', 'medium', 'large']),
+  size: PropTypes.oneOf(['small', 'medium', 'large'])
 }
 
 Icon.defaultProps = {
-  size: 'medium',
+  size: 'large'
 }
 
 export default Icon

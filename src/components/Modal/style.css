@@ -58,7 +58,7 @@
       justify-content: space-between;   
   }
 
-  input[type='text'] {
+  .body input[type='text'] {
     width: 477px;
     height: 56px;
     border-radius: 4px;
