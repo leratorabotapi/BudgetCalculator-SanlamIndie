@@ -10,6 +10,7 @@ import { Table, Space, Row, Col } from 'antd'
 import Modal from '../components/Modal'
 import Icon from '../components/Icon'
 import { Button } from '@indiefin/galaxy-button'
+import { Pill } from '@indiefin/galaxy-pill'
 import social from '../components/images/social.png'
 import { Line } from 'react-chartjs-2'
 import Layout from '../components/layout/Layout'
@@ -59,7 +60,7 @@ export default function Home ({ location }) {
           <div className="App">
             <Row>
               <Col span={23}>
-                <Copy fontType="Body1" size="Body1">Wolfgang Mozart</Copy>
+                <Copy fontType="Body1">Lethabo Moeketsi</Copy>
               </Col>
               <Col span={1}>
                 <Icon name="search" size="large" />
@@ -70,11 +71,13 @@ export default function Home ({ location }) {
                   Your current budget
                 </Copy>
                 <Visacard/>
+               
               </Col>
             </Row>
 
             <Row>
               <Col span={24}>
+              {/*
               {!location?.state?.showModal && (
                   <Button
                     kind="filled"
@@ -119,7 +122,7 @@ export default function Home ({ location }) {
                   fetch new data
                 </Button>
 
-                <Balance amount={location?.state?.balance} />
+                <Balance amount={location?.state?.balance} /> */}
 
                 <div>
             <pre>{JSON.stringify(location?.state?.transactions, null, 2)}</pre>

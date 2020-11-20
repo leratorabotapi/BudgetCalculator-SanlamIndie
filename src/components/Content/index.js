@@ -8,7 +8,7 @@ import Topbar from '../Topbar'
 import Navbar from '../Navbar'
 
 const Content = () => {
-  const { transactions, setTransactions, showModal, setShowModal, balance, setBalance, isFetching, setIsFetching, moneyIn, moneyOut } = useContext(TransactionContext)
+  const { transactions, setTransactions, showModal, setShowModal, balance, setBalance, isFetching, setIsFetching, moneyIn, moneyOut, finalTotalMoneyIn, finalTotalMoneyOut } = useContext(TransactionContext)
   // <input type="text" onChange={(e) => storeObject(e.target.value)}/>
 
   return <div>

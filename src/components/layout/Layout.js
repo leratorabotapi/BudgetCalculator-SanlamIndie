@@ -19,26 +19,6 @@ const Layout = ({ children }) => {
 
   const [balance, setBalance] = useState("")
 
-  const [pages, setPages] = useState([
-    {
-      name: "Reports",
-      icon: "report",
-    },
-    {
-      name: "Transactions",
-      icon: "transaction",
-    },
-    {
-      name: "Budget",
-      icon: "budget",
-    },
-    {
-      name: "Accounts",
-      icon: "account",
-    },
-  ])
-
-  const [activePage, setActivePage] = useState()
 
   // Modal State
   const [showModal, setShowModal] = useState(false)
@@ -63,8 +43,7 @@ const Layout = ({ children }) => {
 
         localStorage.setItem("transactions", JSON.stringify(transformedData))
 
-        setTransactions(data)
-        setActivePage()
+        setTransactions(transformedData)
         setIsFetching(false)
       })
   }
@@ -80,14 +59,26 @@ const Layout = ({ children }) => {
     }
   }, [])
 
-  // filter Expenses- MoneyOut
+  // filter Expenses - MoneyOut
   const moneyOut = transactions.filter(expenses => expenses.amount < 0 )
 
-   // filter Income- MoneyIn
+   // filter Income - MoneyIn
   const moneyIn = transactions.filter(income => income.amount > 0 )
 
+  // Get total of Income
+  const totalMoneyIn = moneyIn.map(income => income.amount)
+  const finalTotalMoneyIn = totalMoneyIn.reduce((acc, item) => (acc += item), 0).toFixed(2)
+  console.log(finalTotalMoneyIn)
 
-  const getExpenses = () => {}
+   // Get total of Income
+  const totalMoneyOut = moneyOut.map(income => income.amount)
+  const finalTotalMoneyOut = totalMoneyOut.reduce((acc, item) => (acc += item), 0).toFixed(2)
+  console.log(finalTotalMoneyOut)
+
+
+  const getExpenses = () => {
+    
+  }
 
   // calculates the total balance -> all negative amounts(expenses) + all positive amounts(income)
   const getBalance = () => {
@@ -107,7 +98,8 @@ const Layout = ({ children }) => {
           showModal, setShowModal,
           balance, setBalance,
           isFetching, setIsFetching,
-          moneyIn, moneyOut 
+          moneyIn, moneyOut,
+          finalTotalMoneyIn, finalTotalMoneyOut 
           }}>
             {children}
         </TransactionContext.Provider>

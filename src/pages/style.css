@@ -2,9 +2,13 @@
 
 .App {
   font-family: "Roboto", sans-serif;
-  padding: 60px 40px 60px;
+  padding: 60px 40px 100px;
   min-height: 100vh;
   background: #fff;
+}
+
+.Blue {
+  background-color: #F9FAFB !important;
 }
 
 .table {
@@ -48,6 +52,10 @@ button {
 
 .ant-table-thead {
   background-color: #e6f1fa !important;
+}
+
+.ant-tabs-nav {
+  background-color: #fff;
 }
 
 th {

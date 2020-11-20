@@ -1496,6 +1496,11 @@
   resolved "https://registry.yarnpkg.com/@indiefin/galaxy-modal/-/galaxy-modal-1.6.0.tgz#5e2ebb2ce3d0adfaf046feb133e437f03fcdc570"
   integrity sha512-G76Z17iAVC+90LTStDxSviRvm4oKlkuB4YDqhWotxInVqDPLD+TgFWlFrd8MoprreSk6lBhqNlzMuds93QPKtA==
 
+"@indiefin/galaxy-pill@^1.6.0":
+  version "1.6.0"
+  resolved "https://registry.yarnpkg.com/@indiefin/galaxy-pill/-/galaxy-pill-1.6.0.tgz#7b258f85c362fb0129f7dd8e7f6cd1b78fd2cba8"
+  integrity sha512-oXQOP4MmDl4ur++ZCaeM26e2gtZXqQe/ag1xDQLaaWp9jFe4bAzs6919yCP5Ue45yk6eZR1ymR58UduYM4Auzg==
+
 "@istanbuljs/load-nyc-config@^1.0.0":
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/@istanbuljs/load-nyc-config/-/load-nyc-config-1.1.0.tgz#fd3db1d59ecf7cf121e80650bb86712f9b55eced"

@@ -1,15 +1,17 @@
 import React, { useContext } from "react"
 import "./style.css"
-import logo from "../images/Sanlam.svg"
 import { Row } from 'antd'
 import Icon from '../Icon'
 import 'antd/dist/antd.css'
+import { LogoFull } from '@indiefin/galaxy-base'
 
 const Navbar = () => {
   return (
     <div className="topbar">
       <Row>
-      <img src={logo} alt="sanlamlogo" />
+        <div className="LogoFull">
+     <LogoFull/>
+     </div>
       </Row>
     </div>
   )
