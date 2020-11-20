@@ -10,6 +10,7 @@ import { Table, Space, Row, Col } from 'antd'
 import Modal from '../components/Modal'
 import Icon from '../components/Icon'
 import { Button } from '@indiefin/galaxy-button'
+import { Pill } from '@indiefin/galaxy-pill'
 import social from '../components/images/social.png'
 import { Line } from 'react-chartjs-2'
 import Layout from '../components/layout/Layout'
@@ -70,6 +71,7 @@ export default function Home ({ location }) {
                   Your current budget
                 </Copy>
                 <Visacard/>
+                <Pill />
               </Col>
             </Row>
 

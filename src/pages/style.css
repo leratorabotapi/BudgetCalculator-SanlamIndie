@@ -7,6 +7,10 @@
   background: #fff;
 }
 
+.Blue {
+  background-color: #F9FAFB !important;
+}
+
 .table {
   margin: 43px 0 80px;
 }
@@ -48,6 +52,10 @@ button {
 
 .ant-table-thead {
   background-color: #e6f1fa !important;
+}
+
+.ant-tabs-nav {
+  background-color: #fff;
 }
 
 th {

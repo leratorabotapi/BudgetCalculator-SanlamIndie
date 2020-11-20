@@ -3,6 +3,7 @@ import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext } from 'pure-re
 import 'pure-react-carousel/dist/react-carousel.es.css';
 import { Row, Col } from 'antd';
 import { Button } from '@indiefin/galaxy-button'
+import { Icon } from '@indiefin/galaxy-base'
 import Back from './back'
 import Next from './next'
 import Copy from '../Copy'
@@ -66,10 +67,10 @@ function VisaCard() {
                 <Row>
                     <Col span={6}></Col>
                     <Col span={4}> 
-                    <Button kind="fab"></Button>
+                    <Button kind="icon" icon="close" aria-hidden />
                     </Col>
-                    <Col span={4}> <Button kind="fab"/></Col>
-                    <Col span={4}> <Button kind="fab"/></Col>
+                    <Col span={4}> <Button kind="icon" icon="add" aria-hidden /></Col>
+                    <Col span={4}> <Button kind="icon" icon="tune" aria-hidden /></Col>
                     <Col span={6}></Col>
                 </Row>
             </CarouselProvider>
