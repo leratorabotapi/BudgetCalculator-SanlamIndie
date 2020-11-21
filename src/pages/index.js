@@ -67,7 +67,7 @@ export default function Home ({ location, money }) {
               </Col>
 
               <Col span={24} align="middle">
-                <Copy fontType="H3" variant="light">
+                <Copy size="H3" variant="light">
                   Your current budget
                 </Copy>
                 <Visacard />

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './style.css'
 import Copy from '../components/Copy'
 import { Row, Col } from 'antd'
@@ -6,9 +6,21 @@ import 'antd/dist/antd.css'
 import Layout from '../components/layout/Layout'
 import Content from '../components/Content'
 import { Checkbox } from '@indiefin/galaxy-checkbox'
+import { Modal } from '@indiefin/galaxy-modal'
 import { Button } from '@indiefin/galaxy-button'
 
 export default function Settings () {
+  const [isOpen, openCloseModal] = useState(false)
+
+  const handleModalOpenClick = () => {
+    openCloseModal(!isOpen)
+  }
+
+  const handleClose = () => {
+    console.info('handleClose in Story')
+    openCloseModal(false)
+  }
+
   return (
     <Layout>
       <Content />
@@ -159,6 +171,32 @@ export default function Settings () {
             </div>
           </Col>
         </Row>
+        <div>
+          {/* <Modal isOpen={isOpen} handleClose={handleClose} shouldTransitionOut>
+            <Copy fontType="h4" weight="bold">
+              Are you sure?
+            </Copy>
+            <Copy fontType="body4">
+              This will remove this person and their funeral cover from your
+              policy
+            </Copy>
+            <hr />
+            <p>
+              Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
+              dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta
+              ac consectetur ac, vestibulum at eros.
+            </p>
+            <p>
+              Praesent commodo cursus magna, vel scelerisque nisl consectetur
+              et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor
+              auctor.
+            </p>
+            <Button handleClick={handleClose}>Save Changes</Button>
+            <Button handleClick={handleClose} kind="outline">
+              Cancel
+            </Button>
+          </Modal> */}
+        </div>
       </div>
     </Layout>
   )

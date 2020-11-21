@@ -1,6 +1,6 @@
-import * as React from "react";
+import * as React from 'react'
 
-function SvgPersonOutline(props) {
+function SvgPersonOutline (props) {
   return (
     <svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" {...props}>
       <path
@@ -10,7 +10,7 @@ function SvgPersonOutline(props) {
         fill="#717983"
       />
     </svg>
-  );
+  )
 }
 
-export default SvgPersonOutline;
+export default SvgPersonOutline

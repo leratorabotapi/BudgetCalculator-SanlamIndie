@@ -113,3 +113,8 @@ progress::-webkit-progress-value {
   background: #4483ca;
   border-radius: 4px;
 }
+
+label {
+  color: #555E66;
+  font-weight: 300;
+}
