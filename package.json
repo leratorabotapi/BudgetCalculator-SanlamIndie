@@ -33,6 +33,7 @@
     "@babel/core": "^7.12.3",
     "@indiefin/galaxy-base": "^1.35.0",
     "@indiefin/galaxy-button": "^1.15.0",
+    "@indiefin/galaxy-checkbox": "^1.8.0",
     "@indiefin/galaxy-modal": "^1.6.0",
     "@indiefin/galaxy-pill": "^1.6.0",
     "@storybook/addon-actions": "^6.1.0",

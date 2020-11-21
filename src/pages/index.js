@@ -17,7 +17,7 @@ import Layout from '../components/layout/Layout'
 import Content from '../components/Content'
 import Visacard from '../components/VisaCard/VisaCard'
 
-export default function Home ({ location }) {
+export default function Home ({ location, money }) {
 
   const openModal = () => setShowModal(true)
   const closeModal = () => setShowModal(false)
@@ -70,7 +70,7 @@ export default function Home ({ location }) {
                 <Copy fontType="H3" variant="light">
                   Your current budget
                 </Copy>
-                <Visacard/>
+                <Visacard />
                
               </Col>
             </Row>

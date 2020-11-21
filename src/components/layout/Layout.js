@@ -10,7 +10,7 @@ const Layout = ({ children }) => {
 
   const [transactions, setTransactions] = useState(() => {
     if (typeof window !== "undefined") {
-      JSON.parse(localStorage.getItem("transactions") || "[]")
+      JSON.parse(localStorage?.getItem("transactions") || "[]")
     }
     return []
   })
@@ -31,7 +31,7 @@ const Layout = ({ children }) => {
       .get(
         "https://indie-transaction-api.netlify.app//.netlify/functions/api/api/"
       )
-      .then(response => {
+      .then((response) => {
         const data = [...transactions, ...response?.data?.transactions]
 
         // Append data, add catergory
@@ -41,7 +41,7 @@ const Layout = ({ children }) => {
           transformedData.push({ ...transaction, category: "Uncatergorised" })
         })
 
-        localStorage.setItem("transactions", JSON.stringify(transformedData))
+        localStorage?.setItem("transactions", JSON.stringify(transformedData))
 
         setTransactions(transformedData)
         setIsFetching(false)

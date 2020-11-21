@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import TransactionContext from '../../context/transations'
 import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext } from 'pure-react-carousel'
 import 'pure-react-carousel/dist/react-carousel.es.css'
 import { Row, Col } from 'antd'
@@ -7,6 +8,7 @@ import { Pill } from '@indiefin/galaxy-pill'
 import Back from './back'
 import Next from './next'
 import Copy from '../Copy'
+import Balance from '../Balance'
 import './style.css'
 
 const buttontStyle = {
@@ -14,7 +16,12 @@ const buttontStyle = {
   background: '#fff'
 }
 
+
+
 function VisaCard () {
+
+    const { balance } = useContext(TransactionContext)
+    
   return (
         <div>
             <CarouselProvider
@@ -33,7 +40,7 @@ function VisaCard () {
 
                             <div className='slide'>
                                 <Row>
-                                <div className='amount'><Copy fontType="H2" weight="bold" className='amount'> R1 300.00</Copy> <br/></div>
+                                <div className='amount'><Balance amount={balance} /></div>
                                 </Row>
                                 <Row>
                                 <Col span={12}>

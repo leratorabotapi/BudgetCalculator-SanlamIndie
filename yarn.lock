@@ -1491,6 +1491,11 @@
   resolved "https://registry.yarnpkg.com/@indiefin/galaxy-button/-/galaxy-button-1.15.0.tgz#753f1c71a26b629e0d0408346b32ec02fc243a2b"
   integrity sha512-Aji17ercujO6Pl0LkOyIWoeZk8ywnqCNz9JcZx1tajnu7NMDHTgchL5MyKzbhXmXStCIuDXsp62uDQhvX4B70g==
 
+"@indiefin/galaxy-checkbox@^1.8.0":
+  version "1.8.0"
+  resolved "https://registry.yarnpkg.com/@indiefin/galaxy-checkbox/-/galaxy-checkbox-1.8.0.tgz#8dc84a3d6a1cd04223ae33403a6a66cc82e4bb55"
+  integrity sha512-pnWFzqiAGULiR174qAkZWLJVJREzIG1YMZrLvAzYGmyQ9cOm05U4iMy6/XygIiJ/InnmFXxLGh8sNl3UAmgxVQ==
+
 "@indiefin/galaxy-modal@^1.6.0":
   version "1.6.0"
   resolved "https://registry.yarnpkg.com/@indiefin/galaxy-modal/-/galaxy-modal-1.6.0.tgz#5e2ebb2ce3d0adfaf046feb133e437f03fcdc570"
