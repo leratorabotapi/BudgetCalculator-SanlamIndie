@@ -8,7 +8,8 @@ import {
   Receipt,
   Sanlam,
   Search,
-  Tune
+  Tune,
+  Settings
 } from '../icons'
 
 const Icon = ({ name, size, color }) => {
@@ -32,8 +33,11 @@ const Icon = ({ name, size, color }) => {
     case 'search':
       content = <Search />
       break
-    case 'settings':
+    case 'tune':
       content = <Tune />
+      break
+      case 'settings':
+      content = <Settings />
       break
     case 'dashboard':
       content = '📊'

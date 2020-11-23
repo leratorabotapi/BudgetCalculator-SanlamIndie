@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import TransactionContext from '../../context/transations'
 import { Link } from 'gatsby'
 import PropTypes from 'prop-types'
 import './style.css'
@@ -15,8 +16,15 @@ const activeStyles = {
 }
 
 const NavItem = ({ children, icon, to }) => {
+  const { transactions, setTransactions, showModal, setShowModal, balance, setBalance, isFetching, setIsFetching, moneyIn, moneyOut, finalTotalMoneyIn, finalTotalMoneyOut } = useContext(TransactionContext)
+
+  console.log(finalTotalMoneyIn + " hey")
+
   return (
-    <Link to={to} style={linkStyles} activeStyle={activeStyles}>
+    <Link to={to} 
+    style={linkStyles} 
+    activeStyle={activeStyles}
+    state={{ transactions, setTransactions, showModal, setShowModal, balance, setBalance, isFetching, setIsFetching, moneyIn, moneyOut, finalTotalMoneyIn, finalTotalMoneyOut }}>
       <Icon name={icon}></Icon>
       <Copy fontType="Body2" weight="regular" style>{children}</Copy>
     </Link>

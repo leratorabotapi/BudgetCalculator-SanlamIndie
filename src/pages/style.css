@@ -23,6 +23,13 @@
   width: 253px;
 }
 
+.bcLfOE {
+  color: #fff !important;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.2);
+  background-color: #0075C9 !important;
+  border: 2px #0075C9 solid !important;
+}
+
 .dashboardDiv1 {
   border: 1px solid pink;
 }
