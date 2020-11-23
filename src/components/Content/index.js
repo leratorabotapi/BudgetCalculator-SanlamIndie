@@ -1,7 +1,5 @@
 import React from 'react'
 import './style.css'
-import Icon from '../Icon'
-import Copy from '../Copy'
 import Topbar from '../Topbar'
 import Navbar from '../Navbar'
 

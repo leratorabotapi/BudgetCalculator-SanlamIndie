@@ -18,13 +18,14 @@ const activeStyles = {
 const NavItem = ({ children, icon, to }) => {
   const { transactions, setTransactions, showModal, setShowModal, balance, setBalance, isFetching, setIsFetching, moneyIn, moneyOut, finalTotalMoneyIn, finalTotalMoneyOut } = useContext(TransactionContext)
 
-  console.log(finalTotalMoneyIn + " hey")
+  console.log(balance + " hey")
 
   return (
     <Link to={to} 
     style={linkStyles} 
     activeStyle={activeStyles}
-    state={{ transactions, setTransactions, showModal, setShowModal, balance, setBalance, isFetching, setIsFetching, moneyIn, moneyOut, finalTotalMoneyIn, finalTotalMoneyOut }}>
+    state={{ transactions, finalTotalMoneyIn, finalTotalMoneyOut, moneyIn, moneyOut }}
+   >
       <Icon name={icon}></Icon>
       <Copy fontType="Body2" weight="regular" style>{children}</Copy>
     </Link>

@@ -17,7 +17,7 @@ import Layout from '../components/layout/Layout'
 import Content from '../components/Content'
 import Visacard from '../components/VisaCard/VisaCard'
 
-export default function Home ({ location, money }) {
+export default function Home ({ location }) {
 
   const openModal = () => setShowModal(true)
   const closeModal = () => setShowModal(false)
@@ -122,11 +122,11 @@ export default function Home ({ location, money }) {
                   fetch new data
                 </Button>
 
-                <Balance amount={location?.state?.balance} /> */}
+                <Balance amount={location?.state?.balance} /> 
 
                 <div>
-            <pre>{JSON.stringify(location?.state?.transactions, null, 2)}</pre>
-          </div>
+            <pre>{JSON.stringify(location?.state?.transactions, null, 2)}</pre> 
+          </div> */}
               </Col>
             </Row>
 
