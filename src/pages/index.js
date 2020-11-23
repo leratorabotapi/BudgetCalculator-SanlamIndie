@@ -60,11 +60,8 @@ export default function Home ({ location }) {
           <Content />
           <div className="App">
             <Row>
-              <Col span={23}>
-                <Copy fontType="Body1">Lethabo Moeketsi</Copy>
-              </Col>
-              <Col span={1}>
-                <Icon name="search" size="large" />
+              <Col span={24}>
+                <ProfileIcon/>
               </Col>
 
               <Col span={24} align="middle">
