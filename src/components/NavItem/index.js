@@ -6,11 +6,8 @@ import Copy from '../Copy'
 import Icon from '../Icon'
 
 const linkStyles = {
-  color: '#D5DAE1',
-  display: 'inline-block',
-  margin: '0 0.5rem',
-  padding: '0.25rem',
-  textDecoration: 'none'
+  color: '#D5DAE1'
+
 }
 
 const activeStyles = {
@@ -21,7 +18,7 @@ const NavItem = ({ children, icon, to }) => {
   return (
     <Link to={to} style={linkStyles} activeStyle={activeStyles}>
       <Icon name={icon}></Icon>
-      <Copy fontType="Body2" weight="regular">{children}</Copy>
+      <Copy fontType="Body2" weight="regular" style>{children}</Copy>
     </Link>
   )
 }

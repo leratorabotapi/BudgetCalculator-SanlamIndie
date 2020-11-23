@@ -1,0 +1,23 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
+import Card from './'
+
+<Meta title="BudgetCalculator/Card" component={Card} />
+
+# Default:
+
+<Canvas>
+    <Story name="default">
+        <Card variant="medium" />
+    </Story>
+</Canvas>
+
+# these are other Card options:
+
+<Canvas>
+    <Story name="medium">
+       <Card variant="large" />
+    </Story>
+    <Story name="xlarge">
+       <Card variant="xlarge" />
+    </Story>
+</Canvas>
