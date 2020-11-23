@@ -1,40 +1,16 @@
-import React, { useContext } from 'react'
-import TransactionContext from '../../context/transations'
-import { Link } from 'gatsby'
+import React from 'react'
 import './style.css'
 import Icon from '../Icon'
 import Copy from '../Copy'
 import Topbar from '../Topbar'
+import Navbar from '../Navbar'
 
 const Content = () => {
-  const { transactions, setTransactions, showModal, setShowModal, balance, setBalance, isFetching, setIsFetching } = useContext(TransactionContext)
   // <input type="text" onChange={(e) => storeObject(e.target.value)}/>
 
-  return <div>      
+  return <div>
     <Topbar />
-    <div className="navbar">
-   
-      <Link to="/"  state={{ transactions, setTransactions, showModal, setShowModal, balance, setBalance, isFetching, setIsFetching }}>
-        <Icon color="blue700" name="home"></Icon>
-        <Copy color="blue700">Dashboard</Copy>
-      </Link>
-      <Link to="/transactions" state={{ transactions }}>
-        <Icon name="transaction"></Icon>
-        <Copy>Transactions</Copy>
-      </Link>
-      <Link to="/budget" state={{ transactions }}>
-        <Icon name="budget"></Icon>
-        <Copy>Budget</Copy>
-      </Link>
-      <Link to="/reports">
-        <Icon name="report"></Icon>
-        <Copy>Reports</Copy>
-      </Link>
-      <Link to="/settings">
-        <Icon name=""></Icon>
-        <Copy>Settings</Copy>
-      </Link>
-    </div>
+    <Navbar />
 
     </div>
 }

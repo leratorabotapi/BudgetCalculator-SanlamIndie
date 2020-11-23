@@ -2,9 +2,13 @@
 
 .App {
   font-family: "Roboto", sans-serif;
-  padding: 60px 40px 60px;
+  padding: 60px 40px 100px;
   min-height: 100vh;
   background: #fff;
+}
+
+.Blue {
+  background-color: #F9FAFB !important;
 }
 
 .table {
@@ -17,6 +21,13 @@
 .homepageImg {
   height: 161px;
   width: 253px;
+}
+
+.bcLfOE {
+  color: #fff !important;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.2);
+  background-color: #0075C9 !important;
+  border: 2px #0075C9 solid !important;
 }
 
 .dashboardDiv1 {
@@ -48,6 +59,10 @@ button {
   background-color: #e6f1fa !important;
 }
 
+.ant-tabs-nav {
+  background-color: #fff;
+}
+
 th {
   background-color: #e6f1fa !important;
   color: #737b81 !important;
@@ -70,6 +85,7 @@ th {
 .settings-block {
   border: 1px solid #e0e0e0;
   margin: 15px;
+  background-color: #fff;
 }
 
 .settings-block-content {
@@ -101,4 +117,9 @@ progress::-webkit-progress-value {
   -webkit-appearance: none;
   background: #4483ca;
   border-radius: 4px;
+}
+
+label {
+  color: #555E66;
+  font-weight: 300;
 }

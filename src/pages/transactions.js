@@ -51,7 +51,7 @@ const Transactions = ({location}) => {
   return (
     <Layout >
       <Content />
-      <div className="App">
+      <div className="App Blue">
             <Row>
             <Tabs defaultActiveKey="1"
             tabBarGutter={58}
@@ -61,7 +61,7 @@ const Transactions = ({location}) => {
             <Copy fontType="H1" weight="bold">Transactions</Copy>
             </Row>
                 <Row>
-            <Card moneyOut="R100" variant="medium" />
+            <Card moneyOut={location?.state?.finalTotalMoneyOut} moneyIn={location?.state?.finalTotalMoneyIn} variant="medium" />
             </Row>
                 <Row> 
               <Col span={24}>
@@ -84,13 +84,35 @@ const Transactions = ({location}) => {
               <Row className="title">
             <Copy fontType="H1" weight="bold">Transactions</Copy>
             </Row>
-                Money In
+            
+            <Card moneyOut={location?.state?.finalTotalMoneyOut} moneyIn={location?.state?.finalTotalMoneyIn} variant="medium" />
+               
+                <Table
+              dataSource={location?.state?.moneyIn}
+              pagination={{
+                total: location?.state?.moneyIn.length,
+                pageSize: 30,
+                hideOnSinglePage: false
+              }}
+            columns={columns}
+
+            />
               </TabPane>
               <TabPane tab="Money Out" key="3">
               <Row className="title">
             <Copy fontType="H1" weight="bold">Transactions</Copy>
             </Row>
-                Money Out
+                
+                <Table
+              dataSource={location?.state?.moneyOut}
+              pagination={{
+                total: location?.state?.moneyOut.length,
+                pageSize: 30,
+                hideOnSinglePage: false
+              }}
+            columns={columns}
+
+            />
               </TabPane>
               <TabPane tab="Pending" key="4" disabled>
                 Pending Tab

@@ -1,32 +1,15 @@
-import React, { useContext } from "react"
-import { Link } from "gatsby"
-import "./style.css"
-import Icon from "../Icon"
-import Copy from "../Copy"
+import React from 'react'
+import './style.css'
+import NavItem from '../NavItem'
 
 const Navbar = () => {
   return (
     <div className="navbar">
-      <Link to="/">
-        <Icon color="blue700" name="home"></Icon>
-        <Copy color="blue700">Dashboard</Copy>
-      </Link>   
-      <Link to="/transactions">
-        <Icon name="transaction"></Icon>
-        <Copy>Transactions</Copy>
-      </Link>
-      <Link to="/budget">
-        <Icon name="budget"></Icon>
-        <Copy>Budget</Copy> 
-      </Link>
-      <Link to="/reports">
-        <Icon name="report"></Icon>
-        <Copy>Reports</Copy>
-      </Link>
-      <Link to="/settings">
-        <Icon name=""></Icon>
-        <Copy>Settings</Copy>
-      </Link>
+      <NavItem to="/" icon="home">Dashboard</NavItem>
+      <NavItem to="/transactions" icon="transactions">Transactions</NavItem>
+      <NavItem to="/budget" icon="budget">Budget</NavItem>
+      <NavItem to="/reports" icon="reports">Reports</NavItem>
+      <NavItem to="/settings" icon="settings">Settings</NavItem>
     </div>
   )
 }

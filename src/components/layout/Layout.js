@@ -10,7 +10,7 @@ const Layout = ({ children }) => {
 
   const [transactions, setTransactions] = useState(() => {
     if (typeof window !== "undefined") {
-      JSON.parse(localStorage.getItem("transactions") || "[]")
+      JSON.parse(localStorage?.getItem("transactions") || "[]")
     }
     return []
   })
@@ -19,26 +19,6 @@ const Layout = ({ children }) => {
 
   const [balance, setBalance] = useState("")
 
-  const [pages, setPages] = useState([
-    {
-      name: "Reports",
-      icon: "report",
-    },
-    {
-      name: "Transactions",
-      icon: "transaction",
-    },
-    {
-      name: "Budget",
-      icon: "budget",
-    },
-    {
-      name: "Accounts",
-      icon: "account",
-    },
-  ])
-
-  const [activePage, setActivePage] = useState()
 
   // Modal State
   const [showModal, setShowModal] = useState(false)
@@ -51,7 +31,7 @@ const Layout = ({ children }) => {
       .get(
         "https://indie-transaction-api.netlify.app//.netlify/functions/api/api/"
       )
-      .then(response => {
+      .then((response) => {
         const data = [...transactions, ...response?.data?.transactions]
 
         // Append data, add catergory
@@ -61,10 +41,9 @@ const Layout = ({ children }) => {
           transformedData.push({ ...transaction, category: "Uncatergorised" })
         })
 
-        localStorage.setItem("transactions", JSON.stringify(transformedData))
+        localStorage?.setItem("transactions", JSON.stringify(transformedData))
 
-        setTransactions(data)
-        setActivePage()
+        setTransactions(transformedData)
         setIsFetching(false)
       })
   }
@@ -80,7 +59,26 @@ const Layout = ({ children }) => {
     }
   }, [])
 
-  const getExpenses = () => {}
+  // filter Expenses - MoneyOut
+  const moneyOut = transactions.filter(expenses => expenses.amount < 0 )
+
+   // filter Income - MoneyIn
+  const moneyIn = transactions.filter(income => income.amount > 0 )
+
+  // Get total of Income
+  const totalMoneyIn = moneyIn.map(income => income.amount)
+  const finalTotalMoneyIn = totalMoneyIn.reduce((acc, item) => (acc += item), 0).toFixed(2)
+  console.log(finalTotalMoneyIn)
+
+   // Get total of Income
+  const totalMoneyOut = moneyOut.map(income => income.amount)
+  const finalTotalMoneyOut = totalMoneyOut.reduce((acc, item) => (acc += item), 0).toFixed(2)
+  console.log(finalTotalMoneyOut)
+
+
+  const getExpenses = () => {
+    
+  }
 
   // calculates the total balance -> all negative amounts(expenses) + all positive amounts(income)
   const getBalance = () => {
@@ -88,8 +86,6 @@ const Layout = ({ children }) => {
     const money = amounts.reduce((acc, item) => (acc += item), 0).toFixed(2)
     setBalance(money)
   }
-
-console.log(balance)
 
   //getBalance is run everytime transactions is updated
   useEffect(() => {
@@ -101,7 +97,9 @@ console.log(balance)
           transactions, setTransactions, 
           showModal, setShowModal,
           balance, setBalance,
-          isFetching, setIsFetching 
+          isFetching, setIsFetching,
+          moneyIn, moneyOut,
+          finalTotalMoneyIn, finalTotalMoneyOut 
           }}>
             {children}
         </TransactionContext.Provider>

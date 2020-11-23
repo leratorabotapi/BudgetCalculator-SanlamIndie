@@ -10,6 +10,7 @@ import { Table, Space, Row, Col } from 'antd'
 import Modal from '../components/Modal'
 import Icon from '../components/Icon'
 import { Button } from '@indiefin/galaxy-button'
+import { Pill } from '@indiefin/galaxy-pill'
 import social from '../components/images/social.png'
 import { Line } from 'react-chartjs-2'
 import Layout from '../components/layout/Layout'
@@ -17,7 +18,7 @@ import Content from '../components/Content'
 import Visacard from '../components/VisaCard/VisaCard'
 import ProfileIcon from '../components/ProfileIcon/ProfileIcon'
 
-export default function Home ({ location }) {
+export default function Home ({ location, money }) {
 
   const openModal = () => setShowModal(true)
   const closeModal = () => setShowModal(false)
@@ -60,22 +61,24 @@ export default function Home ({ location }) {
           <div className="App">
             <Row>
               <Col span={23}>
-                <ProfileIcon/>
+                <Copy fontType="Body1">Lethabo Moeketsi</Copy>
               </Col>
               <Col span={1}>
                 <Icon name="search" size="large" />
               </Col>
 
               <Col span={24} align="middle">
-                <Copy fontType="H3" variant="light">
+                <Copy size="H3" variant="light">
                   Your current budget
                 </Copy>
-                <Visacard/>
+                <Visacard />
+               
               </Col>
             </Row>
 
             <Row>
               <Col span={24}>
+              {/*
               {!location?.state?.showModal && (
                   <Button
                     kind="filled"
@@ -120,40 +123,11 @@ export default function Home ({ location }) {
                   fetch new data
                 </Button>
 
-                <Balance amount={location?.state?.balance} />
+                <Balance amount={location?.state?.balance} /> */}
 
                 <div>
-      <pre>{JSON.stringify(location?.state?.transactions, null, 2)}</pre>
-    </div>
-
-                {/* Modal button
-
-    <div>
-      <Copy fontType="H1">Expenses</Copy>
-
-      {transactions
-      .filter(expenses => expenses.amount < 0 )
-      .map(expenses => (
-
-      <Copy>
-      <div>
-        <pre>{JSON.stringify(expenses, null, 2)}</pre>
-      </div>
-      </Copy>
-
-      ))}
-    </div>
-
-    <div>
-    <Copy fontType="H1">Income</Copy>
-    {transactions
-      .filter(income => income.amount > 0 )
-      .map(income => (
-
-      <div>
-       <Copy> <pre>{JSON.stringify(income, null, 2)}</pre></Copy>
-      </div>
-      ))} */}
+            <pre>{JSON.stringify(location?.state?.transactions, null, 2)}</pre>
+          </div>
               </Col>
             </Row>
 
