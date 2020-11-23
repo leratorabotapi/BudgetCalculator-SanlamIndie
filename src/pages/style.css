@@ -39,8 +39,6 @@
   border-bottom: 1px solid #e0e0e0;
   min-height: 375px;
 }
-.dashbordDiv4 {
-}
 
 button {
   margin: 5px;
@@ -96,7 +94,7 @@ progress {
 
 progress::-webkit-progress-bar {
   -webkit-appearance: none;
-  background: #E6F1FA;
+  background: #e6f1fa;
   border-radius: 4px;
 }
 progress::-webkit-progress-value {

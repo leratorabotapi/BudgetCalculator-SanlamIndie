@@ -11,10 +11,16 @@ import './style.css'
 
 
 const contentStyle = {
-    textAlign: 'center',
+    alignContent: 'center',
   };
 
+const contentStyle1 = {
+    alignContent: 'center',
+    paddingBottom: '30px',
+};  
+
 const buttontStyle = {
+    paddingTop: '50px',
     border: 'none',
     background: '#fff',
   };  
@@ -26,7 +32,7 @@ function VisaCard() {
         <div>
             <CarouselProvider
                 naturalSlideWidth={30}
-                naturalSlideHeight={25}
+                naturalSlideHeight={20}
                 totalSlides={3}
             >
                 <Row>
@@ -60,10 +66,10 @@ function VisaCard() {
                         </Slider>
                     </Col>
                     <Col style={contentStyle} span={8}>
-                        <div><ButtonNext style={buttontStyle}><Next/></ButtonNext></div>
+                        <ButtonNext style={buttontStyle}><Next/></ButtonNext>
                     </Col>
                 </Row>
-                <Row>
+                <Row style={contentStyle1}>
                     <Col span={6}></Col>
                     <Col span={4}> <Button kind="fab"/></Col>
                     <Col span={4}> <Button kind="fab"/></Col>

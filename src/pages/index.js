@@ -15,6 +15,7 @@ import { Line } from 'react-chartjs-2'
 import Layout from '../components/layout/Layout'
 import Content from '../components/Content'
 import Visacard from '../components/VisaCard/VisaCard'
+import ProfileIcon from '../components/ProfileIcon/ProfileIcon'
 
 export default function Home ({ location }) {
 
@@ -59,7 +60,7 @@ export default function Home ({ location }) {
           <div className="App">
             <Row>
               <Col span={23}>
-                <Copy fontType="Body1">Wolfgang Mozart</Copy>
+                <ProfileIcon/>
               </Col>
               <Col span={1}>
                 <Icon name="search" size="large" />

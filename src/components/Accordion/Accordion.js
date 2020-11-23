@@ -18,7 +18,7 @@ function Accordion() {
     return (
         <div className="container">
             <Collapse accordion>
-                <Panel header="Food" key="1" style={contentStyle}>
+                <Panel header="Food" key="1">
                     <Row>
                         <Col span={12}>KFC Cape Town(Card 6006)</Col> 
                         <Col span={6}>03 Nov 2020</Col> 
