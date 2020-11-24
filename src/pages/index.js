@@ -75,56 +75,7 @@ export default function Home ({ location }) {
 
             <Row>
               <Col span={24}>
-              {/*
-              {!location?.state?.showModal && (
-                  <Button
-                    kind="filled"
-                    color="blue"
-                    size="regular"
-                    handleClick={openModal}
-                  >
-                    Open Modal
-                  </Button>
-                )}
-                <Modal
-                  closeModal={closeModal}
-                  showModal={location?.state?.showModal}
-                  title="Modal Example"
-                >
-                   <input type="text" id="category" name="" placeholder="e.g Category" /><br/>
-                    <hr />
-                  <Balance amount={location?.state?.balance} />
-                </Modal>
 
-                <Button
-                  kind="filled"
-                  color="blue"
-                  size="regular"
-                  handleClick={() => {
-                    localStorage.removeItem("transactions")
-                    location?.target?.setTransactions([])
-                  }}
-                >
-                  clear localStorage
-                </Button>
-
-
-                <Button
-                  color="blue"
-                  disabled={location?.state?.isFetching}
-                  handleClick={() => fetchData()}
-                  kind="filled"
-                  size="regular"
-                  type="button"
-                >
-                  fetch new data
-                </Button>
-
-                <Balance amount={location?.state?.balance} /> 
-
-                <div>
-            <pre>{JSON.stringify(location?.state?.transactions, null, 2)}</pre> 
-          </div> */}
               </Col>
             </Row>
 

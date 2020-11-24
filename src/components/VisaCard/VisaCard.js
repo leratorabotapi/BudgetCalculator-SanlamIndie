@@ -60,7 +60,7 @@ function VisaCard () {
                             <div className='slide'>
                                 <Row style={{ height: "100%" }} justify="space-between">
                                 <Row>
-                                <div className='amount'><Balance amount="200" size="28" fontType="H2" /></div>
+                                <div className='amount'><Balance amount="0" size="28" fontType="H2" /></div>
                                 </Row>
                                 <Row justify="space-between" style={{ width: "100%" }} align="bottom" >
                                 <Col span={6}>

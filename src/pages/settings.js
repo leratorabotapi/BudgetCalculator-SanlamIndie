@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
 import './style.css'
 import Copy from '../components/Copy'
 import { Row, Col } from 'antd'
@@ -6,7 +6,6 @@ import 'antd/dist/antd.css'
 import Layout from '../components/layout/Layout'
 import Content from '../components/Content'
 import { Checkbox } from '@indiefin/galaxy-checkbox'
-import { Modal } from '@indiefin/galaxy-modal'
 import { Button } from '@indiefin/galaxy-button'
 
 export default function Settings () {

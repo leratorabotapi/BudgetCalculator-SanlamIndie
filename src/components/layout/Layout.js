@@ -269,7 +269,8 @@ const Layout = ({ children }) => {
           balance, setBalance,
           isFetching, setIsFetching,
           moneyIn, moneyOut,
-          finalTotalMoneyIn, finalTotalMoneyOut 
+          finalTotalMoneyIn, finalTotalMoneyOut,
+          categories 
           }}>
             {children}
         </TransactionContext.Provider>
