@@ -21,6 +21,7 @@
     "antd": "^4.8.2",
     "axios": "^0.21.0",
     "chart.js": "^2.9.4",
+    "chartjs-plugin-datalabels": "^0.7.0",
     "gatsby": "^2.25.1",
     "moment": "^2.29.1",
     "pure-react-carousel": "^1.27.6",

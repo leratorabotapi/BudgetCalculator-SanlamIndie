@@ -201,6 +201,13 @@ export default function Home ({ location }) {
                       }
                     ]
                   }}
+                  options={{
+                    plugins: {
+                      datalabels: {
+                        display: false,
+                      },
+                    },
+                  }}
                 />
               </div>
             </Row>
