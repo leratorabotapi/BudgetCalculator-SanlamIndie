@@ -8,9 +8,12 @@ const Layout = ({ children }) => {
     refreshOnLoad: true,
   })
 
-  const [transactions, setTransactions] = useState(
-    JSON.parse(localStorage?.getItem("transactions") || "[]")
-  );
+  const [transactions, setTransactions] = useState(() => {
+    if (typeof window !== "undefined") {
+      JSON.parse(localStorage.getItem("transactions") || "[]")
+    }
+    return []
+  })
 
   const [isFetching, setIsFetching] = useState(false)
 
