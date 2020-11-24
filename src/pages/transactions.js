@@ -28,7 +28,7 @@ const Transactions = ({location}) => {
       render: (text) => (
         <Space size="middle">
           <Copy color="wealthGrey300" fontType="Body2">{text}</Copy>
-          <a>Edit</a>
+          
         </Space>
       )
     },
@@ -112,9 +112,6 @@ const Transactions = ({location}) => {
             columns={columns}
 
             />
-              </TabPane>
-              <TabPane tab="Pending" key="4" disabled>
-                Pending Tab
               </TabPane>
             </Tabs>
             </Row>

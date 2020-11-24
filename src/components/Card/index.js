@@ -16,12 +16,12 @@ function Card (props) {
             </Row>
 
             <Row>
-            <Col span={12}>
+            <Col style={{ marginTop: '10px'}} span={12}>
             <Copy color="wealthGrey300" fontType='Body1'>
             Money Out
             </Copy>
             </Col>
-            <Col spane={12}>
+            <Col style={{ marginTop: '10px'}} span ={12}>
               <Copy color="wealthGrey300" fontType='Body1'>
             <Balance amount={moneyOut} />
             </Copy>
@@ -29,12 +29,13 @@ function Card (props) {
             </Row>
 
             <Row align="bottom">
-            <Col span={12}>
+            <Col style={{ marginTop: '10px'}} span={12}>
             <Copy color="wealthGrey300" fontType='Body1'>
             Money In
             </Copy>
             </Col>
-            <Col spane={12}>
+            <br ></br>
+            <Col style={{ marginTop: '10px'}} spane={12}>
               <Copy color="wealthGrey300" fontType='Body1'>
             <Balance amount={moneyIn} />
             </Copy>

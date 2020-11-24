@@ -37,7 +37,6 @@ export default function Home ({ location }) {
       render: text => (
         <Space size="middle">
           <Copy fontType="Body2">{text}</Copy>
-          <a>Edit</a>
         </Space>
       )
     },
