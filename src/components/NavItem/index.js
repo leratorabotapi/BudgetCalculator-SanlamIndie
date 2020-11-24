@@ -18,8 +18,6 @@ const activeStyles = {
 const NavItem = ({ children, icon, to }) => {
   const { transactions, setTransactions, showModal, setShowModal, balance, setBalance, isFetching, setIsFetching, moneyIn, moneyOut, finalTotalMoneyIn, finalTotalMoneyOut } = useContext(TransactionContext)
 
-  console.log(balance + " hey")
-
   return (
     <Link to={to} 
     style={linkStyles} 

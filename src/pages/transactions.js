@@ -36,6 +36,7 @@ const Transactions = ({location}) => {
       title: 'Date',
       dataIndex: 'date',
       key: 'date',
+      sorter: (a, b) => new Date(a.date) - new Date(b.date),
       render: (text) =>
       <Copy color="wealthGrey300" fontType="Body2"><Date date={text} /></Copy>
     },
@@ -84,8 +85,6 @@ const Transactions = ({location}) => {
               <Row className="title">
             <Copy fontType="H1" weight="bold">Transactions</Copy>
             </Row>
-            
-            <Card moneyOut={location?.state?.finalTotalMoneyOut} moneyIn={location?.state?.finalTotalMoneyIn} variant="medium" />
                
                 <Table
               dataSource={location?.state?.moneyIn}

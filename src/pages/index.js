@@ -65,7 +65,7 @@ export default function Home ({ location }) {
               </Col>
 
               <Col span={24} align="middle">
-                <Copy size="H3" variant="light">
+                <Copy fontType="H3" variant="light">
                   Your current budget
                 </Copy>
                 <Visacard />
@@ -156,9 +156,7 @@ export default function Home ({ location }) {
                     Tips & Advice
                   </Copy>
                   <Copy fontType="Body2">
-                    Well done! you managed to save {} from last months budget.
-                    You can save up to 15% more if you target your spending on
-                    best value shopping deals :)
+                  Look through your budget and all your receipts. Can you find an expense that can be cut? Maybe you could bring your lunch to work twice a week, or set up a carpool with a friend 😀.
                   </Copy>
                   <img
                     className="homepageImg"

@@ -2,8 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Copy from '../Copy'
 
-const Balance = ({ amount, size, currency, color }) => {
-
+const Balance = ({ amount, size, currency, color, type, fontType }) => {
   let balanceColor
   switch (color) {
     case 'red':
@@ -22,17 +21,18 @@ const Balance = ({ amount, size, currency, color }) => {
 
   const formattedAmount = new Intl.NumberFormat('en-ZA', {
     style: 'currency',
-    currency,
+    currency
   }).format(amount)
 
   return (
     <div
-      className={`balance-${size}`}
+      className={`balance-${type}`}
       style={{
-        color: `${balanceColor}`
+        color: `${balanceColor}`,
+        fontSize: `${size}px`
       }}
     >
-      <Copy fontType="Body1">{formattedAmount}</Copy> 
+      <Copy fontType={fontType} >{formattedAmount}</Copy>
     </div>
   )
 }

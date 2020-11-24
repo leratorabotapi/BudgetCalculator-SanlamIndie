@@ -28,7 +28,7 @@ function Card (props) {
             </Col>
             </Row>
 
-            <Row>
+            <Row align="bottom">
             <Col span={12}>
             <Copy color="wealthGrey300" fontType='Body1'>
             Money In
