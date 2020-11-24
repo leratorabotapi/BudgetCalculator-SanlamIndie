@@ -123,3 +123,23 @@ label {
   color: #555E66;
   font-weight: 300;
 }
+
+.graphDiv2 {
+  max-height: 375px;
+  padding: 40px 16px 0 0;
+  border-top: 1px solid #e0e0e0;
+  border-bottom: 1px solid #e0e0e0;
+  border-right: 1px solid #e0e0e0;
+  min-height: 375px;
+}
+
+.graphDiv3 {
+  padding: 31px 0 0px 23px;
+  border-top: 1px solid #e0e0e0;
+  border-bottom: 1px solid #e0e0e0;
+  min-height: 375px;
+}
+
+.tune {
+  color: #717983 !important;
+}

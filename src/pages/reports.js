@@ -34,7 +34,7 @@ export default function Reports({location}) {
   }
 
   const horiData = {
-    labels: ["Transport", "Shopping", "Education", "Food & Drink"],
+    labels: ["Brand1", "Brand2", "Brand3", "Brand4"],
     datasets: [
       {
         backgroundColor: "#4483CA",
@@ -137,8 +137,8 @@ export default function Reports({location}) {
                 all categories.
               </Copy>
               <progress
-                value={location?.state?.finalTotalMoneyIn}
-                max={location?.state?.finalTotalMoneyOut}
+                value={location?.state?.finalTotalMoneyOut}
+                max={location?.state?.finalTotalMoneyIn}
               ></progress>
             </div>
           </Col>
@@ -199,6 +199,7 @@ export default function Reports({location}) {
         </Row>
         <Row>
           <Col span={12}>
+            <div className="graphDiv2">
             <Copy fontType="H4" weight="bold">
               Top 5 Merchants
             </Copy>
@@ -238,8 +239,11 @@ export default function Reports({location}) {
                 }
               }}
             />
+            </div>
           </Col>
           <Col span={12}>
+          <div className="graphDiv3">
+              
             <Copy style={{ paddingLeft: "30px" }} fontType="H4" weight="bold">
               Category Expenditure
             </Copy>
@@ -276,6 +280,7 @@ export default function Reports({location}) {
                 },
               }}
             />
+            </div>
           </Col>
         </Row>
         <Row>
